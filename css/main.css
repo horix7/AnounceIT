@@ -1,0 +1,75 @@
+       
+:root {
+    --main-backgroung-color: rgb(237, 249, 253), 230, 238);
+    --first-color:  deepskyblue;
+    --attention-color: red;
+  }
+body {
+    background-color: var(main-backgroung-color);
+}
+.sign_page {
+    margin-top: 100px;
+    /* background-color: blueviolet; */
+    text-align: center;
+    
+}
+.sign_form {
+    padding: 10px;
+    display: inline-block;
+
+}
+.inputs_sign {
+    background-color: whitesmoke;
+    display: flex;
+    box-sizing: border-box;
+    width: 400px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 50px;
+    margin-top: 30px;
+    padding-left: 20px;
+
+}
+
+.sign_btn {
+    background-color:var(--first-color);
+    color: whitesmoke;
+    width: 200px;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 50px;
+    border: grey 1px solid;
+    cursor: pointer;
+}
+h4 {
+    color: blue;
+    cursor: pointer;
+}
+
+.anouncement {
+    display: inline-block;
+
+}
+.anouncement_form  {
+    display: inline;
+    text-align: center;
+    grid-template-columns: auto 1fr auto;       
+}
+
+#anouncement_image {
+    display: inline;
+    width: 100px;
+}
+
+.btn_readmore {
+    color: white;
+    width: 100px;
+    height: 30px;
+    border: 1px var(--main-backgroung-color) solid;
+    border-radius: 50px;
+    background-color: var(--first-color);
+}
+
+.inline_div {
+    display: inline;
+}
