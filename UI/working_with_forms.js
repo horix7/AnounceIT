@@ -6,9 +6,12 @@ const newUserName = document.querySelector("#sign_up_inputs_f3")
 const newPassword1 = document.querySelector("#sign_up_inputs_f4")
 const newPassword2 = document.querySelector("#sign_up_inputs_f5")
 const submitBtn = document.querySelector("#sign_up_btn")
-let array;
+let userInfo = {};
+
+let array1 = [ newFirstName ,newSecondName,newUserName,newPassword1,newPassword2]
+let array = [ newFirstName.value ,newSecondName.value,newUserName.value,newPassword1.value,newPassword2.value]
 submitBtn.addEventListener( 'click', () => {
-    array = [ newFirstName.value ,newSecondName.value,newUserName.value,newPassword1.value,newPassword2.value]
+    
     if (newPassword1.value !== newPassword2.value) {
         console.log('password does not match')
     } else {
@@ -17,6 +20,12 @@ submitBtn.addEventListener( 'click', () => {
     console.log(array)
 })
 
-function trial() {
-    console.log(array)
-}
+
+array1.forEach( n => {
+    userInfo[n] = array[array1.indexOf(n)]
+
+})
+
+console.log(userInfo)
+console.log(array1)
+console.log(array)

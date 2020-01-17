@@ -1,4 +1,5 @@
        
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 :root {
     --main-backgroung-color: rgb(237, 249, 253), 230, 238);
     --first-color:  deepskyblue;
@@ -7,8 +8,46 @@
 body {
     background-color: var(main-backgroung-color);
 }
+
+h3,h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+}
+
+.mainHolder {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.panelBox {
+    margin-top: 10%;
+    text-align: center;
+     display: grid;
+     grid-template-rows: 1fr 1fr;
+
+}
+
+.panelBox div {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 5px solid var(--first-color);
+    padding: 50px;
+    font-size: xx-large;
+    color: var(--first-color);
+    /* align-items: center; */
+    margin: 20px;
+    width: 500px;
+    height: 200px;
+    cursor: pointer;
+    /* background-color: var(--first-color); */
+}
+
+
+.homeIcon {
+width: 100px;
+height: 100px;
+}
+
 .sign_page {
-    margin-top: 100px;
+    margin-top: 50px;
     /* background-color: blueviolet; */
     text-align: center;
     
@@ -18,8 +57,9 @@ body {
     display: inline-block;
 
 }
-.inputs_sign {
-    background-color: whitesmoke;
+.inputs_sign { 
+    font-family: 'Roboto', sans-serif; 
+    background-color: whreditesmoke;
     display: flex;
     box-sizing: border-box;
     width: 400px;
@@ -31,7 +71,12 @@ body {
 
 }
 
+input[type="text"],input[type="password"], input[type="number"], button {
+    outline:none;
+}
+
 .sign_btn {
+    font-family: 'Roboto', sans-serif;
     background-color:var(--first-color);
     color: whitesmoke;
     width: 200px;
@@ -41,6 +86,11 @@ body {
     border: grey 1px solid;
     cursor: pointer;
 }
+
+button :hover {
+    background-color: red;
+}
+
 h4 {
     color: blue;
     cursor: pointer;
