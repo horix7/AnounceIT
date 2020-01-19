@@ -71,7 +71,7 @@ height: 100px;
 
 }
 
-input[type="text"],input[type="password"], input[type="number"], button {
+input[type="text"],select, input[type="date"],input[type="password"], input[type="number"], button {
     outline:none;
 }
 
@@ -122,4 +122,74 @@ h4 {
 
 .inline_div {
     display: inline;
+}
+
+.inline_div {
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.anouncement_form {
+    text-align: center;
+}
+.anouncement {
+    margin-left: 10%;
+    text-align: center;
+    background-color: deepskyblue;
+    width: 500px;
+    padding: 50px;
+    margin-top: 100px;
+}
+
+.sin_btn {
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px white solid;
+    border-radius: 50px;
+}
+
+.sign_in2 { 
+    float: right;
+
+}
+ .sign_in1 {
+ 
+    float: left;
+
+}
+
+.inputs_sin {
+    font-family: 'Roboto', sans-serif; 
+    background-color: whreditesmoke;
+    display: flex;
+    box-sizing: border-box;
+    width: 400px;
+    height: 100px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+.anouncementform {
+    margin-left: 40%;
+    margin-top: 50px;
+}
+
+.anouncementform div {
+    color: var(--first-color);
+    padding: 10px;
+}
+
+.options {
+    padding: 10px;
+    
+}
+
+.message{
+    margin-top: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
 }
