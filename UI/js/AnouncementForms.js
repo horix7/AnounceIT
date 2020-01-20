@@ -41,4 +41,5 @@ submitBtn.addEventListener('click', () => {
 
         location.href = '/AnounceIT/UI/html/Anouncement.html'
     }
+    
 })

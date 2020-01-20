@@ -14,6 +14,13 @@ h3,h4 {
     font-size: medium;
 }
 
+#readMore:hover {
+    color: black;
+    background: white;
+}
+.see, .edit, .delete {
+    visibility: hidden;
+}
 .mainHolder {
     margin-left: 10%;
     margin-right: 10%;
@@ -219,6 +226,7 @@ h4 {
 }
 
 
+
 .anouncementform div {
     color: var(--first-color);
     padding: 10px;
@@ -234,3 +242,49 @@ h4 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: small;
 }
+
+.alertBox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(177, 245, 245, 0.9);
+    transition: opacity 600ms;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+  }
+  
+  .alert {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+    position: relative;
+    transition: all 2s ease-in-out;
+  }
+  .alertBox:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  .alert .close {
+    position: absolute;
+    font-weight: bold;
+    text-decoration: none;
+    top: 20px;
+    right: 30px;
+    transition: all 300ms;
+    font-size: 30px;
+    color: deepskyblue;
+  }
+  .alert .content {
+    max-height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .alert .content input {
+    width: 100%;
+  }
