@@ -140,17 +140,25 @@ h4 {
     cursor: pointer;
 }
 
+.start, .end{
+    margin: 20px;
+}
 .extra {
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+ #dot {
+     color: deepskyblue;
+ }
 .inline_div {
     font-family: 'Roboto', sans-serif;
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 20px;
     text-align: center;
     margin-bottom: 20px;
 }
+
 .anouncement_form {
     padding: 10px;
     text-align: center;
