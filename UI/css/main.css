@@ -34,10 +34,16 @@ h3,h4 {
     color: var(--first-color);
     /* align-items: center; */
     margin: 20px;
-    width: 500px;
-    height: 200px;
+    width: 70%;
+    height: 50px;
     cursor: pointer;
+    background-color: deepskyblue;
     /* background-color: var(--first-color); */
+}
+
+.panelBox div a {
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -97,13 +103,10 @@ h4 {
 }
 
 .anouncement {
-    display: inline-block;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows: 100px;
 
-}
-.anouncement_form  {
-    display: inline;
-    text-align: center;
-    grid-template-columns: auto 1fr auto;       
 }
 
 #anouncement_image {
@@ -176,7 +179,22 @@ h4 {
 .anouncementform {
     margin-left: 15%;
     margin-top: 50px;
+
 }
+
+@media screen and (max-width: 600px) {
+    .anouncementform input{
+        width: 80%;
+        margin-left: 0%;
+    }
+    .anouncement {
+        margin-left: 0%;
+        grid-template-columns: 200px;
+        grid-template-rows: 100px 100px 100px;
+        grid-gap: 40px;
+    }
+}
+
 
 .anouncementform div {
     color: var(--first-color);

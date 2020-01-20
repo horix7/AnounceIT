@@ -6,13 +6,24 @@
     background-color: rgb(227, 249, 2539), 20, 128);
 }  */
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 .midhome {
-    font-size: xx-large;
+    display: grid;
+    grid-template-rows: 100px 100px;
     margin-top: 12%;
-    margin-left: 40%;
-    width: 300px;
+    /* margin-left: 20%; */
+    width: 600px;
     text-align: center;
     display:inline-block;
+    animation-name: intro;
+
+}
+
+.container {
+    align-content: center;
+    align-items: center;
+
+    text-align: center;
 }
 
 .navBar {
@@ -59,7 +70,15 @@
       float: left;
       display: block;
     }
+
+    .midhome {
+        width: 70%;
+    }
+    .panelBox div{
+        width: 100px;
+    }
   }
+
   
   @media screen and (max-width: 600px) {
     .navBar.responsive {position: relative;}
@@ -73,4 +92,10 @@
       display: block;
       text-align: left;
     }
+  }
+
+  h1 {
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      
   }
