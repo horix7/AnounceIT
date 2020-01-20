@@ -102,11 +102,30 @@ h4 {
     cursor: pointer;
 }
 
+.status {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.anouncementHeader {
+    margin-top: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+
 .anouncement {
+    border-top: 1px solid black;
+    font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns:  1fr 1fr 1fr;
-    grid-template-rows: 100px;
-
+    grid-template-rows: 30px;
+    /* margin-left: 10%; */
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+    margin-top: 50px;
 }
 
 #anouncement_image {
@@ -114,34 +133,30 @@ h4 {
     width: 100px;
 }
 
-.btn_readmore {
+#readMore {
     color: white;
-    width: 100px;
-    height: 30px;
-    border: 1px var(--main-backgroung-color) solid;
-    border-radius: 50px;
-    background-color: var(--first-color);
+    background-color: deepskyblue;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.extra {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .inline_div {
-    display: inline;
-}
-
-.inline_div {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     text-align: center;
     margin-bottom: 20px;
 }
 .anouncement_form {
+    padding: 10px;
     text-align: center;
-}
-.anouncement {
-    margin-left: 10%;
-    text-align: center;
-    background-color: deepskyblue;
-    width: 500px;
-    padding: 50px;
-    margin-top: 100px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .sin_btn {

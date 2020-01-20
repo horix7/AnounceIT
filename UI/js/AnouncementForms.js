@@ -4,23 +4,34 @@ const anouncementEndtDate = document.querySelector("#anouncement_inputs_Edate")
 const anouncementDescription = document.querySelector("#anouncement_inputs_Description")
 // const anouncementStatus = document.querySelector()
 const submitBtn = document.querySelector('#submit_btn')
+let inputInfo = [anouncementName, anouncementDescription, anouncementStartDate,anouncementEndtDate]
+let inputValues = []
+let inputDict = {}
+submitBtn.addEventListener('click', () => {
+    inputValues = []
 
-console.log('working')
-let AnouncememntInfo; 
-let counter = 0
+    inputInfo.forEach(n => {
 
-submitBtn.addEventListener( 'click', () => {
-    AnouncememntInfo = [anouncementName.value , anouncementStartDate.value , anouncementEndtDate.value , anouncementDescription.value];
-    console.log(AnouncememntInfo)
-    AnouncememntInfo.forEach(n => {
-        if (n == "") {
-            counter++
-        } 
+        console.log(n.value)
+        if (n.value == "") {
+
+            inputInfo[inputInfo.indexOf(n)].style.border = '1px red solid'
+           
+        } else {
+            inputValues.push(n.value)
+            inputInfo[inputInfo.indexOf(n)].style.border = '1px grey solid'
+        }
+
     })
-    console.log(counter, AnouncememntInfo.length)
-    
-})
 
-if (counter == AnouncememntInfo.length) {
-    console.log('the matches ', counter, AnouncememntInfo.length)
-}
+    if (inputValues.length  == inputInfo.length) {
+        inputDict['name'] = anouncementName.value;
+        inputDict['description'] = anouncementDescription.value;
+        inputDict['starting'] = anouncementStartDate.value;
+        inputDict['ending'] = anouncementEndtDate.value;
+
+        localStorage.setItem('inputValues', inputValues)
+        localStorage.setItem('inputDict', inputDict)
+        console.log(inputDict)
+    }
+})
