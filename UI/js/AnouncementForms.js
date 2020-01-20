@@ -32,6 +32,13 @@ submitBtn.addEventListener('click', () => {
 
         localStorage.setItem('inputValues', inputValues)
         localStorage.setItem('inputDict', inputDict)
+        localStorage.setItem('anouncementName', anouncementName.value)
+        localStorage.setItem('anouncementDescription', anouncementDescription.value)
+        localStorage.setItem('anouncementStarting', anouncementStartDate.value)
+        localStorage.setItem('anouncementEnding', anouncementEndtDate.value)
+
         console.log(inputDict)
+
+        location.href = '/AnounceIT/UI/html/Anouncement.html'
     }
 })
