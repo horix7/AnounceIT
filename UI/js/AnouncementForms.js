@@ -7,6 +7,7 @@ const submitBtn = document.querySelector('#submit_btn')
 let inputInfo = [anouncementName, anouncementDescription, anouncementStartDate,anouncementEndtDate]
 let inputValues = []
 let inputDict = {}
+let anouncementInformation;
 submitBtn.addEventListener('click', () => {
     inputValues = []
 
@@ -37,9 +38,22 @@ submitBtn.addEventListener('click', () => {
         localStorage.setItem('anouncementStarting', anouncementStartDate.value)
         localStorage.setItem('anouncementEnding', anouncementEndtDate.value)
 
+        anouncementInformation =[ 
+            {
+                'anouncemtName':  anouncementName.value,
+                'anouncementDescription': anouncementDescription.value,
+                'anouncementStarting': anouncementStartDate.value,
+                'anouncementEnding': anouncementEndtDate.value
+            }
+        ]
+
+        console.log(anouncementInformation)
+        
         console.log(inputDict)
 
         location.href = '/AnounceIT/UI/html/Anouncement.html'
     }
     
 })
+
+ 
