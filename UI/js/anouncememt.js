@@ -93,7 +93,5 @@ const editAnouncement = () => {
 const deleteMessage = document.querySelector('.deleteName')
 const deleteAnouncement = () => {
    location.href = '#deleteAnouncement'
-   if (localStorage.userType == 'Advertiser') {
-      deleteMessage.innerHTML = 'Advertizer cant delete the Anouncement'
-   }
+   
 }

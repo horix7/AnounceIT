@@ -12,6 +12,8 @@ let userInfo;
 let userRefer;
 let element;
 let moveOn = false;
+
+let signUpInformation;
 submitBtn.onclick = () => {
 
     localStorage.setItem('firstName', newFirstName.value)
@@ -59,6 +61,17 @@ submitBtn.onclick = () => {
             check.style.border = 'red 1px solid'
         }
         else if (nonez.length === userRefer.length) {
+            signUpInformation = [
+                {
+                    'FirstName': newFirstName.value,
+                    'SecondName': newSecondName.value,
+                    'UserName': newUserName.value,
+                    'Password': newPassword1.value,
+                    'phoneNumber': phoneNumber.value,
+                    'userAdrress': userAdrress.value,
+                    'userType': userType.value
+                }
+            ]
             location.href = '/AnounceIT/UI/html/home.html'
         }
 console.log(moveOn)
