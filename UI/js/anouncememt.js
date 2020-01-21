@@ -17,8 +17,8 @@ for (let x = 0; x< runIt; x++) {
     </div>
         <div class = "inline_div"><div> ${localStorage.anouncementDescription}  </div>
             <div>
-            <span class="start"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Starting ${localStorage.anouncementStarting}</span>
-            <span class="end"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Ending ${localStorage.anouncementEnding}</span> 
+            <span class="start"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Starts ${localStorage.anouncementStarting}</span>
+            <span class="end"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Ends ${localStorage.anouncementEnding}</span> 
             </div>
         </div> 
         
@@ -38,7 +38,9 @@ let show = () => {
    if (document.querySelector(".see").style.visibility == 'hidden') {
       document.querySelector(".see").style.visibility = 'visible'
    document.querySelector(".edit").style.visibility = 'visible'
-   document.querySelector(".delete").style.visibility = 'visible'
+   if (localStorage.userType == 'admin') {
+      document.querySelector(".delete").style.visibility = 'visible'
+   }
    } else {
       document.querySelector(".see").style.visibility = 'hidden'
    document.querySelector(".edit").style.visibility = 'hidden'
@@ -58,8 +60,8 @@ const viewAll = () => {
    anounceName.innerHTML = localStorage.anouncementName;
    anounceDescription.innerHTML = localStorage.anouncementDescription;
    anounceStatus.innerHTML = 'status: ' + ' Pending'
-   anounceSdate.innerHTML = '  Starting At: ' + localStorage.anouncementStarting
-   anounceEdate.innerHTML = '    Ending At: ' + localStorage.anouncementEnding
+   anounceSdate.innerHTML = '  Starts At: ' + localStorage.anouncementStarting
+   anounceEdate.innerHTML = '  Ends At: ' + localStorage.anouncementEnding
 
 }
 
