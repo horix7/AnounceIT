@@ -1,8 +1,15 @@
+
+// const anouncementStatus = document.querySelector()
+// const express = require('express')
+// const sourceFile = require('./sourceFile')
+// const app = express();
+
 const anouncementName = document.querySelector("#anouncement_inputs_name")
 const anouncementStartDate = document.querySelector("#anouncement_inputs_Sdate")
 const anouncementEndtDate = document.querySelector("#anouncement_inputs_Edate")
 const anouncementDescription = document.querySelector("#anouncement_inputs_Description")
-// const anouncementStatus = document.querySelector()
+
+
 const submitBtn = document.querySelector('#submit_btn')
 let inputInfo = [anouncementName, anouncementDescription, anouncementStartDate,anouncementEndtDate]
 let inputValues = []
@@ -26,32 +33,34 @@ submitBtn.addEventListener('click', () => {
     })
 
     if (inputValues.length  == inputInfo.length) {
-        inputDict['name'] = anouncementName.value;
-        inputDict['description'] = anouncementDescription.value;
-        inputDict['starting'] = anouncementStartDate.value;
-        inputDict['ending'] = anouncementEndtDate.value;
 
-        localStorage.setItem('inputValues', inputValues)
-        localStorage.setItem('inputDict', inputDict)
-        localStorage.setItem('anouncementName', anouncementName.value)
-        localStorage.setItem('anouncementDescription', anouncementDescription.value)
-        localStorage.setItem('anouncementStarting', anouncementStartDate.value)
-        localStorage.setItem('anouncementEnding', anouncementEndtDate.value)
+        // inputDict['name'] = anouncementName.value;
+        // inputDict['description'] = anouncementDescription.value;
+        // inputDict['starting'] = anouncementStartDate.value;
+        // inputDict['ending'] = anouncementEndtDate.value;
 
-        anouncementInformation =[ 
+        // localStorage.setItem('inputValues', inputValues)
+        // localStorage.setItem('inputDict', inputDict)
+        // localStorage.setItem('anouncementName', anouncementName.value)
+        // localStorage.setItem('anouncementDescription', anouncementDescription.value)
+        // localStorage.setItem('anouncementStarting', anouncementStartDate.value)
+        // localStorage.setItem('anouncementEnding', anouncementEndtDate.value)
+
+        anouncementInformation = 
             {
                 'anouncemtName':  anouncementName.value,
                 'anouncementDescription': anouncementDescription.value,
                 'anouncementStarting': anouncementStartDate.value,
                 'anouncementEnding': anouncementEndtDate.value
             }
-        ]
+        module.exports = { anouncementInformation: 'anouncementInformation'}
+        
 
         console.log(anouncementInformation)
-        
+        console.log(data)
         console.log(inputDict)
 
-        location.href = '/AnounceIT/UI/html/Anouncement.html'
+        // location.href = '/AnounceIT/UI/html/Anouncement.html'
     }
     
 })
