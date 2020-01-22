@@ -4,7 +4,11 @@ const loginBtn = document.querySelector("#sign_in_btn")
 const failerMessage = document.querySelector(".message")
 function loginFun() {
     if (loginName.value == localStorage.userName && loginPass.value == localStorage.password) {
-        location.href = '/AnounceIT/UI/html/home.html'
+        if (localStorage.userType == 'Advertiser') {
+            location.href = '/AnounceIT/UI/html/home.html'
+        } else {
+            location.href = '/AnounceIT/UI/html/admin.html'
+        }
         console.log(loginName.value, ' => ', localStorage.userName)
     } else {
         console.log('no')

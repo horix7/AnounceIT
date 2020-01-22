@@ -1,4 +1,5 @@
-const anouncementOutput = document.querySelector('.anouncement')
+const anouncementOutput = document.querySelectorAll('.anouncement')
+const anouncementInput  = document.querySelector('.anouncementMain')
 let outputInfo = localStorage.inputValues.split(',')
 let status = 'pending'
 
@@ -7,7 +8,8 @@ const moreBtn = document.querySelector('.more')
 console.log(outputInfo.length)
 let runIt = outputInfo.length / 4
 for (let x = 0; x< runIt; x++) {
-    anouncementOutput.innerHTML =  ` 
+    anouncementInput.innerHTML =  ` 
+<section class="anouncement">
     <div class = "anouncement_form" id="front_anouncement"><div>
     ${localStorage.anouncementName} 
     </div>
@@ -22,13 +24,14 @@ for (let x = 0; x< runIt; x++) {
             </div>
         </div> 
         
-    <div>
+    <div class = "icons">
         <i class="fa fa-ellipsis-v more" id="readMore" onclick = "show()"></i>
         <i class="fa fa-eye see"  id="readMore" onclick = "viewAll()"></i>
         <i class="fa fa-edit edit" id="readMore"  onclick = "editAnouncement()"></i>
         <i class="fa fa-trash-o delete" id="readMore"  onclick = "deleteAnouncement()"></i>
 
     </div>
+</section>
 
     ` 
 }
@@ -92,6 +95,17 @@ const editAnouncement = () => {
 
 const deleteMessage = document.querySelector('.deleteName')
 const deleteAnouncement = () => {
-   location.href = '#deleteAnouncement'
+   // location.href = '#deleteAnouncement'
+
+   anouncementInput.style.background = 'red'
+   anouncementInput.style.display = 'none'
    
+}
+
+if (localStorage.userType == 'admin') {
+   document.querySelector('.header').href = '/AnounceIT/UI/html/admin.html'
+}
+
+document.querySelector('.anouncement_form div').onclick = () => {
+ location.href = '/AnounceIT/UI/html/AnouncementPage.html'
 }

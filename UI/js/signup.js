@@ -72,7 +72,12 @@ submitBtn.onclick = () => {
                     'userType': userType.value
                 }
             ]
-            location.href = '/AnounceIT/UI/html/home.html'
+
+            if ( userType.value == 'Advertiser') {
+                location.href = '/AnounceIT/UI/html/home.html'
+            } else {
+                location.href = '/AnounceIT/UI/html/admin.html'
+            }
         }
 console.log(moveOn)
     }

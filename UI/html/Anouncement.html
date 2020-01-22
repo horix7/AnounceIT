@@ -50,7 +50,7 @@
     </div>
     <header class="nav">
         <div class="navBar" id="nav">
-            <a href="/AnounceIT/UI/html/home.html">Home</a>
+            <a href="/AnounceIT/UI/html/home.html" class="header">Home</a>
             <a href="/AnounceIT/UI/html/Anouncement.html">Anouncement</a>
             <a href="/AnounceIT/UI/html/sign_in.html"><button id = "homebtn">Sign Out</button></a>
             <a href="javascript:void(0);" class="icon" onclick="responsive()">
@@ -62,27 +62,39 @@
     <div class="anouncementHeader"> Anouncement List </div>
 
  </div>
-    
-    <section class="anouncement">
-        <div class = "anouncement_form" id="front_anouncement"><div>
-            Anouncement name
+
+ <section class="anouncementMain">
+
+ </section>
+ 
+<section>
+        
+ <section class="anouncement">
+     
+    <div class = "anouncement_form" id="front_anouncement"><div>
+        first anouncement 
         </div>
         <div class="status" id="status"> 
-            status 
+        status 
         </div>
-    </div>
-            <div class = "inline_div"> anouncement description more 
-                more AND MORE AND MORE AND MORE and more
-            </div>  
-            <div class="start"></div>
-            <div class="end"></div>
-
-        <div>
-            <i class="fa fa-ellipsis-v" id="readMore"></i>
-            <!-- fa fa-ellipsis-v -->
         </div>
-    </section>
+            <div class = "inline_div"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, eligendi sapiente? Consequuntur, nihil. Praesentium possimus expedita quaerat eum recusandae obcaecati cum dolorum, quasi .</div>
+                <div>
+                <span class="start"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Starts  2020-11-1</span>
+                <span class="end"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Ends 2020-11-1</span> 
+                </div>
+            </div> 
+            
+        <div class = "icons">
+            <i class="fa fa-ellipsis-v more" id="readMore" onclick = "show()"></i>
+            <i class="fa fa-eye see"  id="readMore" onclick = "viewAll()"></i>
+            <i class="fa fa-edit edit" id="readMore"  onclick = "editAnouncement()"></i>
+            <i class="fa fa-trash-o delete" id="readMore"  onclick = "deleteAnouncement()"></i>
     
+        </div>
+</section>
+
+</section>
 <script src="/AnounceIT/UI/js/home.js"></script>
 <script src="/AnounceIT/UI/js/anouncememt.js"></script>
 

@@ -154,9 +154,14 @@ h4 {
     font-size: xx-large;
     text-transform: uppercase;
 }
-
+.anouncement_form div:hover {
+    cursor: pointer;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: rgb(177, 245, 245, 0.9);
+}
 .anouncement {
-    border-top: 1px solid black;
+    border-top: 1px solid #000000;
     font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns:  1fr 1fr 1fr;
@@ -192,10 +197,11 @@ h4 {
  }
 .inline_div {
     font-family: 'Roboto', sans-serif;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.inline_div div {
     margin-bottom: 20px;
 }
 
@@ -251,12 +257,26 @@ h4 {
         margin-left: 0%;
     }
     .anouncement {
-        margin-left: 0%;
-        grid-template-columns: 200px;
-        grid-template-rows: 100px 100px 100px;
-        grid-gap: 40px;
+       display: flexbox;
+       flex-wrap: wrap-reverse;
+        /* grid-gap: 40px; */  
     }
+    .anouncement_form {
+        width: 100%;
+    }
+    .inline_div {
+        display: none;
+    }
+    .edit , .delete {
+        visibility: hidden;
+    }
+    .see {
+        margin-top: 0px;
+        visibility: visible;
+        width: 70%;
+        border: 2px solid white;
 
+    }
     .adminPanel {
         grid-template-columns: 400px;
         grid-template-rows: 100px 100px;
@@ -300,11 +320,15 @@ h4 {
 .pageDescription {
 
     /* padding-left: 40px; */
-    margin-left: 10%;
+    margin-left: 20%;
     padding-right: 40px;
-    width: 80%;
+    width: 60%;
+    font-size: large;
+    padding: 10px;
+    /* border: 1px solid deepskyblue; */
     /* border: 1px solid black; */
 }
+
 
 .alertBox {
     position: fixed;
