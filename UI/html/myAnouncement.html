@@ -30,22 +30,12 @@
         <div class="alert">
             <h2 class="anounceName"></h2>
             <a class="close" href="#"><i class="fa fa-close"></i></a>
-            <div class="content" id="inputForm">
+            <div class="content">
                 <input type="text" id="newName" class="inputs_sign" placeholder="new Anouncement name">
                 <textarea name="newAnouncement"  id="newDescription" class="inputs_sin" placeholder="new Anouncement name" cols="30" rows="10"></textarea>
                 <input type="date" class="inputs_sign" id = "Sdate">
                 <input type="date" class="inputs_sign" id = "Edate">
                 <button id="changeAnouncement" class="sign_btn">Change</button>
-            </div>
-
-            <div class="adminChange">
-                <select name="status" id="changeStatus" class="inputs_sign">
-                    <option value="pending" default>Pending</option>
-                    <option value="Accepted">Accepted</option>
-                    <option value="Denied">Denied</option>
-                </select>
-                <button class="sign_btn" id="update"> Update </button>
-
             </div>
         </div>
     </div>
@@ -69,7 +59,7 @@
           </div>
     </header>
  <div class="container">
-    <div class="anouncementHeader"> Anouncement List </div>
+    <div class="anouncementHeader">My Anouncement</div>
 
  </div>
 
@@ -79,7 +69,7 @@
  
 <section>
         
- <section class="anouncement">
+ <section class="anouncement" id="notMine">
      
     <div class = "anouncement_form" id="front_anouncement"><div>
         first anouncement 

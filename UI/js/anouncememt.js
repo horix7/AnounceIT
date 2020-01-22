@@ -4,7 +4,7 @@ let outputInfo = localStorage.inputValues.split(',')
 let status = 'pending'
 
 const moreBtn = document.querySelector('.more')
-
+localStorage.status = 'pending'
 console.log(outputInfo.length)
 let runIt = outputInfo.length / 4
 for (let x = 0; x< runIt; x++) {
@@ -14,7 +14,7 @@ for (let x = 0; x< runIt; x++) {
     ${localStorage.anouncementName} 
     </div>
     <div class="status" id="status"> 
-    ${status}
+    ${localStorage.status}
     </div>
     </div>
         <div class = "inline_div"><div> ${localStorage.anouncementDescription}  </div>
@@ -78,6 +78,7 @@ const changeEdate = document.querySelector("#Edate")
 
 const editAnouncement = () => {
    location.href = '#editElement'
+  if (localStorage.userType == 'Advertiser') {
    changeName.value = localStorage.anouncementName
    changeDescription.value = localStorage.anouncementDescription
    changeSdate.value = localStorage.anouncementStarting
@@ -90,7 +91,17 @@ const editAnouncement = () => {
       localStorage.anouncementEnding = changeEdate.value;
       location.href = '/AnounceIT/UI/html/Anouncement.html'
    })
-   
+  } else {
+     location.href = '#editElement'
+     document.querySelector('#inputForm').style.display = 'none'
+     document.querySelector('#update').onclick = () => {
+        status = document.querySelector('#changeStatus').value
+      console.log(status)
+      localStorage.setItem( 'status', status)
+      location.href = '/AnounceIT/UI/html/Anouncement.html'
+     }
+
+  }
 }
 
 const deleteMessage = document.querySelector('.deleteName')

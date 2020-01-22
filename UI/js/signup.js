@@ -22,7 +22,7 @@ submitBtn.onclick = () => {
     localStorage.setItem('password', newPassword1.value)
     localStorage.setItem('phoneNumber', phoneNumber.value)
     localStorage.setItem('userAdress', userAdrress.value)
-    localStorage.setItem('userType', userType.value)
+    localStorage.setItem('userType', 'Advertiser')
     // localStorage.setItem('firstName', newFirstName.value)
     console.log(localStorage)
 
@@ -69,7 +69,7 @@ submitBtn.onclick = () => {
                     'Password': newPassword1.value,
                     'phoneNumber': phoneNumber.value,
                     'userAdrress': userAdrress.value,
-                    'userType': userType.value
+                    'userType': 'Advertiser'
                 }
             ]
 
