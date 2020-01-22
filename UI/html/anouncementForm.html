@@ -19,27 +19,30 @@
 </head>
 <body>
     <header class="nav">
-        <nav class="navBar">
-           
-            <ul>
-                <li><a href="#">Anouncements</a></li>
-                <li><a href="#">Home</a></li>
-                <li> <a href="#"><button class="sign_btn" id="homebtn">Sign out</button></a></li>
-            </ul>
-           
-        </nav>
+        <div class="navBar" id="nav">
+            <a href="/AnounceIT/UI/html/home.html">Home</a>
+            <a href="/AnounceIT/UI/html/Anouncement.html">Anouncement</a>
+            <a href="/AnounceIT/UI/html/sign_in.html"><button id = "homebtn">Sign Out</button></a>
+            <a href="javascript:void(0);" class="icon" onclick="responsive()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
     </header>
-    
-<div class="anouncementform">
-<input  type="text" placeholder="anouncement name" class="inputs_sign" id="anouncement_inputs_name">
-<input type="text" name="description" placeholder="description" id="anouncement_inputs_Description" class="inputs_sin">
-<div> starting date</div>
-<input type="date" placeholder="initialDate" class="inputs_sign" id="anouncement_inputs_Sdate">
-<div>ending date</div>
-<input type="date" placeholder="lastDate" class="inputs_sign" id="anouncement_inputs_Edate">
+ 
 
-<button class="sign_btn" id="submit_btn">Submit</button>
-</div>
+    <div class="anouncementform">
+        <input required type="text" placeholder="anouncement name" class="inputs_sign" id="anouncement_inputs_name">
+        <textarea name="description" placeholder="Description" id="anouncement_inputs_Description" class="inputs_sin" cols="30" rows="10"></textarea>
+        <div> starting date</div>
+        <input required type="date" placeholder="initialDate" class="inputs_sign" id="anouncement_inputs_Sdate">
+        <div>ending date</div>
+        <input required type="date" placeholder="lastDate" class="inputs_sign" id="anouncement_inputs_Edate">
+        
+        <button class="sign_btn" id="submit_btn">Submit</button>
+        </div>
 
+
+<script src="/AnounceIT/UI/js/home.js"></script>
+<script src="/AnounceIT/UI/js/AnouncementForms.js"></script>
 </body>
 </html>

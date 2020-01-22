@@ -10,29 +10,23 @@
 </head>
 <!-- <img src="C:\Users\PAUL\Documents\ADC\AnounceIT\MART_LOGO_2x.png" alt="" srcset="" class="logo"> -->
 
-<body>
+<body >
     <header class="nav">
-        <nav class="navBar">
-            <ul>
-                <!-- <li><img class="logo" src="images/logo.png" alt="" srcset=""></li>
-                <li><a href="#">Anouncement</a></li>
-                <li><a href="#">info </a></li> -->
-                <li> <a href="/AnounceIT/UI/html/sign_in.html"><button class="sign_btn" id="homebtn">Sign in</button></a></li>
-            </ul>
-           
-        </nav>
+        <div class="navBar" id="nav">
+            <a href="/AnounceIT/UI/html/sign_in.html"><button>Sign In</button></a>
+            <a href="javascript:void(0);" class="icon" onclick="responsive()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
     </header>
-
+<section class="container">
 
     <div class="midhome">
-        post and share your anouncements with AnounceIT
+        <h1>post and share your anouncements with AnounceIT </h1>
         <a href="/AnounceIT/UI/html/sign_up.html"><button class="sign_btn" > Get Started </button></a>
     </div>
-<style>
-.logo {
-    display: inline;
-}
+</section>
 
-</style>
+<script src="/AnounceIT/UI/js/home.js"></script>
 </body>
 </html>

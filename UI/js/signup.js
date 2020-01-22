@@ -11,6 +11,9 @@ const userType = document.querySelector("#userType")
 let userInfo;
 let userRefer;
 let element;
+let moveOn = false;
+
+let signUpInformation;
 submitBtn.onclick = () => {
 
     localStorage.setItem('firstName', newFirstName.value)
@@ -37,6 +40,7 @@ submitBtn.onclick = () => {
           
         let checker;
         let check;
+        let nonez = [];
         element = [newFirstName, newSecondName, newUserName, newPassword1, phoneNumber, userAdrress, userType]
         userRefer = ['FirstName', 'SecondName','UserName','Password', 'phoneNumber', 'userAdrress', 'userType']
         userInfo = [newFirstName.value, newSecondName.value,newUserName.value,newPassword1.value, phoneNumber.value, userAdrress.value, userType.value]
@@ -44,11 +48,35 @@ submitBtn.onclick = () => {
             if ( n == "") {
                 check = element[userInfo.indexOf(n)]
                 checker =  userRefer[userInfo.indexOf(n)] +  ' was not filled'
+            } else if(n !== "") {
+               nonez.push(n)
+               
             }
         });
-        check.placeholder = checker
-        check.style.border = 'red 1px solid'
+        
         console.log(checker)
+        console.log(nonez)
+        if (nonez.length < userRefer.length) {
+            check.placeholder = checker
+            check.style.border = 'red 1px solid'
+        }
+        else if (nonez.length === userRefer.length) {
+            signUpInformation = [
+                {
+                    'FirstName': newFirstName.value,
+                    'SecondName': newSecondName.value,
+                    'UserName': newUserName.value,
+                    'Password': newPassword1.value,
+                    'phoneNumber': phoneNumber.value,
+                    'userAdrress': userAdrress.value,
+                    'userType': userType.value
+                }
+            ]
+            location.href = '/AnounceIT/UI/html/home.html'
+        }
+console.log(moveOn)
     }
 }
+
+console.log(moveOn)
 

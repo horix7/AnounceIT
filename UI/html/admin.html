@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>panel</title>
+    <title>Admin Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/AnounceIT/UI/css/home.css">
@@ -14,32 +14,33 @@
     <header class="nav">
 
         <div class="navBar" id="nav">
-            <a href="/AnounceIT/UI/html/home.html">Home</a>
-            <a href="/AnounceIT/UI/html/Anouncement.html">Anouncement</a>
+            <a href="/AnounceIT/UI/html/home.html">All Users</a>
+            <a href="/AnounceIT/UI/html/Anouncement.html">Anouncements page</a>
             <a href="/AnounceIT/UI/html/sign_in.html"><button id = "homebtn">Sign Out</button></a>
             <a href="javascript:void(0);" class="icon" onclick="responsive()">
               <i class="fa fa-bars"></i>
             </a>
           </div>
-
     </header>
 
-    <section class="container">
+    <div class="container">
+        <div class="anouncementHeader">Admin </div>
+     </div>
+
+     <section class="container">
         <div class="mainHolder">
-            <section class="panelBox">
+            <section class="adminPanel">
                 <div>
-                    <a href="/AnounceIT/UI/html/anouncementForm.html"> <span>Create An Anouncement</span></a>
+                    <a href="/AnounceIT/UI/html/AnouncementForAdmin.html"> <span>View Anouncement</span></a>
     
                 </div>
                 <div>
-                    <a href="/AnounceIT/UI/html/Anouncement.html"><span>View Created Anouncement</span></a>
+                    <a href="/AnounceIT/UI/html/allUsers.html"><span> view All user</span></a>
                 </div>
             </section> </div>
 
     </section>
-    
-   
-<script src="/AnounceIT/UI/js/home.js"></script>
 
+<script src="/AnounceIT/UI/js/home.js"></script>
 </body>
 </html>
