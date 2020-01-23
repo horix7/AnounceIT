@@ -4,7 +4,10 @@
   "description": "Anouncement Project ",
   "main": "index.js",
   "scripts": {
-    "test": "''"
+    "test": "''",
+    "start": "nodemon --exec babel-node ./server/index.js",
+    "build": "babel src --out-dir  dist ",
+    "serve": "node dict dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,17 +24,25 @@
   },
   "homepage": "https://github.com/horix7/AnounceIT#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "joi": "^14.3.1",
-    "nodemon": "^2.0.2"
+    "jsonwebtoken": "^8.5.1",
+    "node-gyp": "^6.1.0",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
     "@babel/node": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
+    "@types/bcrypt": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0"
