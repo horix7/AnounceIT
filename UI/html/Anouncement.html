@@ -40,9 +40,11 @@
 
             <div class="adminChange">
                 <select name="status" id="changeStatus" class="inputs_sign">
-                    <option value="pending" default>Pending</option>
-                    <option value="Accepted">Accepted</option>
-                    <option value="Denied">Denied</option>
+                    <option value="pending" default>pending</option>
+                    <option value="accepted">accepted</option>
+                    <option value="denied">declined</option>
+                    <option value="active">active</option>
+                    <option value="deactive">deactive</option>
                 </select>
                 <button class="sign_btn" id="update"> Update </button>
 
@@ -60,6 +62,7 @@
     </div>
     <header class="nav">
         <div class="navBar" id="nav">
+            <div class = "leftIcon" ><img src="/AnounceIT/UI/images/logo.png" alt="" onclick="location.href = '/AnounceIT/UI/html/home.html'"></div>
             <a href="/AnounceIT/UI/html/home.html" class="header">Home</a>
             <a href="/AnounceIT/UI/html/Anouncement.html">Anouncement</a>
             <a href="/AnounceIT/UI/html/sign_in.html"><button id = "homebtn">Sign Out</button></a>
@@ -69,7 +72,7 @@
           </div>
     </header>
  <div class="container">
-    <div class="anouncementHeader"> Anouncement List </div>
+    <div class="anouncementHeader">Anouncements</div>
 
  </div>
 
@@ -77,32 +80,7 @@
 
  </section>
  
-<section>
-        
- <section class="anouncement">
-     
-    <div class = "anouncement_form" id="front_anouncement"><div>
-        first anouncement 
-        </div>
-        <div class="status" id="status"> 
-        status 
-        </div>
-        </div>
-            <div class = "inline_div"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, eligendi sapiente? Consequuntur, nihil. Praesentium possimus expedita quaerat eum recusandae obcaecati cum dolorum, quasi .</div>
-                <div>
-                <span class="start"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Starts  2020-11-1</span>
-                <span class="end"><i class="fa fa-dot-circle-o" aria-hidden="true" id = "dot"></i> Ends 2020-11-1</span> 
-                </div>
-            </div> 
-            
-        <div class = "icons">
-            <i class="fa fa-ellipsis-v more" id="readMore" onclick = "show()"></i>
-            <i class="fa fa-eye see"  id="readMore" onclick = "viewAll()"></i>
-            <i class="fa fa-edit edit" id="readMore"  onclick = "editAnouncement()"></i>
-            <i class="fa fa-trash-o delete" id="readMore"  onclick = "deleteAnouncement()"></i>
-    
-        </div>
-</section>
+
 
 </section>
 <script src="/AnounceIT/UI/js/home.js"></script>

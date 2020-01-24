@@ -43,11 +43,29 @@
     text-decoration: none;
     font-size: 17px;
   }
+
+  .leftIcon {
+    float: left;
+  }
+
+  .leftIcon img {
+    margin-left: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 2.5px deepskyblue solid;
+    border-right: 1px deepskyblue solid;
+    width: 150px;
+  }
+
+  .leftIcon img:hover {
+    background-color: rgb(196, 233, 245);
+    border: white;
+  }
   
   .navBar a button {
     font-family: 'Roboto', sans-serif;
         background-color: var(--first-color);
-        border: 1px solid black;
+        border: 2px solid deepskyblue;
         color:white;
         border-radius: 50px;
 
@@ -72,10 +90,14 @@
     }
 
     .midhome {
+        transition: ease-in;
         width: 70%;
     }
     .panelBox div{
         width: 100px;
+    }
+    .leftIcon {
+      display: none;
     }
   }
 
