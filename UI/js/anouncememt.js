@@ -4,7 +4,6 @@ let outputInfo = localStorage.inputValues.split(',')
 let status = 'pending'
 
 const moreBtn = document.querySelector('.more')
-localStorage.status = 'pending'
 console.log(outputInfo.length)
 let runIt = outputInfo.length / 4
 for (let x = 0; x< runIt; x++) {
@@ -62,7 +61,7 @@ const viewAll = () => {
    location.href = '#viewAnouncement';
    anounceName.innerHTML = localStorage.anouncementName;
    anounceDescription.innerHTML = localStorage.anouncementDescription;
-   anounceStatus.innerHTML = 'status: ' + ' Pending'
+   anounceStatus.innerHTML = 'status: ' + localStorage.status
    anounceSdate.innerHTML = '  Starts At: ' + localStorage.anouncementStarting
    anounceEdate.innerHTML = '  Ends At: ' + localStorage.anouncementEnding
 
@@ -79,6 +78,7 @@ const changeEdate = document.querySelector("#Edate")
 const editAnouncement = () => {
    location.href = '#editElement'
   if (localStorage.userType == 'Advertiser') {
+   document.querySelector('.adminChange').style.visibility = 'hidden'
    changeName.value = localStorage.anouncementName
    changeDescription.value = localStorage.anouncementDescription
    changeSdate.value = localStorage.anouncementStarting
@@ -89,13 +89,16 @@ const editAnouncement = () => {
       localStorage.anouncementDescription = changeDescription.value;
       localStorage.anouncementStarting = changeSdate.value;
       localStorage.anouncementEnding = changeEdate.value;
+      // document.querySelector('').style.display = 'none'
       location.href = '/AnounceIT/UI/html/Anouncement.html'
    })
-  } else {
+  } else if (localStorage.userType == 'admin') {
      location.href = '#editElement'
+     document.querySelector('.adminChange').style.visibility = 'visible'
      document.querySelector('#inputForm').style.display = 'none'
      document.querySelector('#update').onclick = () => {
         status = document.querySelector('#changeStatus').value
+        localStorage.status = status
       console.log(status)
       localStorage.setItem( 'status', status)
       location.href = '/AnounceIT/UI/html/Anouncement.html'

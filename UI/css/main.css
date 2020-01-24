@@ -21,6 +21,9 @@ body {
     text-align: center;
 }
 
+.adminChange {
+    visibility: hidden;
+}
 #notMine {
     display: none;
 }
@@ -113,7 +116,7 @@ height: 100px;
     box-sizing: border-box;
     width: 400px;
     height: 40px;
-    border: 1px solid grey;
+    border: 1px solid deepskyblue;
     border-radius: 50px;
     margin-bottom: 30px;
     padding-left: 25px;
@@ -133,12 +136,14 @@ input[type="text"],textarea,select, input[type="date"],input[type="password"], i
     height: 40px;
     margin-top: 30px;
     border-radius: 50px;
-    border: grey 1px solid;
+    border: deepskyblue 1px solid;
     cursor: pointer;
 }
 
-button :hover {
-    background-color: red;
+button:hover {
+    background-color: white;
+    border: deepskyblue solid 1.3px;
+    color: deepskyblue
 }
 
 h4 {
@@ -247,7 +252,7 @@ h4 {
     box-sizing: border-box;
     width: 400px;
     height: 100px;
-    border: 1px solid grey;
+    border: 1px solid deepskyblue;
     border-radius: 15px;
     margin-bottom: 20px;
     padding-left: 20px;
@@ -295,10 +300,6 @@ h4 {
         text-align: center;
         margin-top: 50px;
         border: 3px solid white;
-    }
-    .user {
-        display: grid;
-        background-color: red;
     }
 }
 
@@ -398,9 +399,12 @@ h4 {
   } */
 
   .user {
-    border: 1px solid deepskyblue;
+    /* border: 1px solid deepskyblue; */
     margin-top: 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 100px;
+    border-bottom: deepskyblue 1px solid;
     /* grid-template-columns: 1fr  1fr; */
  
   }
@@ -410,7 +414,7 @@ h4 {
       color: white;
       width: 500px;
       background-color: deepskyblue;
-      border: 2px white solid;
+      border: 10px white solid;
       padding: 10px;
       grid-gap: 2px;
 
@@ -422,10 +426,10 @@ h4 {
         margin-left: 0%;
     }
     .anouncement {
-        margin-left: 0%;
-        grid-template-columns: 200px;
-        grid-template-rows: 100px 100px 100px;
-        grid-gap: 40px;
+        /* margin-left: 0%; */
+        grid-template-columns: 80%;
+        grid-template-rows: 40px 30px;
+        grid-gap: 30px;
     }
 
     .adminPanel {
@@ -439,9 +443,26 @@ h4 {
         margin-top: 50px;
         border: 3px solid white;
     }
+    #sign_in_form {
+        margin-top: 30%;
+    }
+    .inputs_sign, .inputs_sin{
+
+        width:300px;
+        border: white;
+        background-color: rgb(192, 252, 247);
+    }
+    .alert {
+        width: 80%;
+    }
+
     .user {
-        /* display: grid; */
-        background-color: red;
+        display: grid;
+        grid-template-rows: 100px 100px 100px;
+        grid-template-columns: 90%;
+    }
+    .user div{
+        width: 100%;
     }
 }
 

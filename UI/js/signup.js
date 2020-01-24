@@ -42,8 +42,8 @@ submitBtn.onclick = () => {
         let check;
         let nonez = [];
         element = [newFirstName, newSecondName, newUserName, newPassword1, phoneNumber, userAdrress, userType]
-        userRefer = ['FirstName', 'SecondName','UserName','Password', 'phoneNumber', 'userAdrress', 'userType']
-        userInfo = [newFirstName.value, newSecondName.value,newUserName.value,newPassword1.value, phoneNumber.value, userAdrress.value, userType.value]
+        userRefer = ['FirstName', 'SecondName','UserName','Password', 'phoneNumber', 'userAdrress']
+        userInfo = [newFirstName.value, newSecondName.value,newUserName.value,newPassword1.value, phoneNumber.value, userAdrress.value]
         userInfo.forEach( n => {
             if ( n == "") {
                 check = element[userInfo.indexOf(n)]
@@ -73,7 +73,7 @@ submitBtn.onclick = () => {
                 }
             ]
 
-            if ( userType.value == 'Advertiser') {
+            if ( localStorage.userType !== 'Admin') {
                 location.href = '/AnounceIT/UI/html/home.html'
             } else {
                 location.href = '/AnounceIT/UI/html/admin.html'
