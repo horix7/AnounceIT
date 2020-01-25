@@ -33,7 +33,8 @@ const userInfo = {
                     "email": account.createUser(req.body).email,
                     "address": account.createUser(req.body).address,
                     "phoneNumber": account.createUser(req.body).phoneNumber,
-                    "is_admin": account.createUser(req.body).is_admin
+                    "is_admin": account.createUser(req.body).is_admin,
+                    "password": account.createUser(req.body).password
                 }
                });
         }

@@ -32,6 +32,19 @@ class User {
                 return res;
             }
         };
+        this.login = (userInput) => {
+            const checkEmail = allUsers.find(info => info.email === userInput.email)
+
+            if (checkEmail) {
+                if ( info.password == userInput.password) {
+                    return  true 
+                } else {
+                    return "your password does not match"
+                }
+            } else {
+                return 'user email already exist'
+            }
+        };
         this.findAllUsers = () => {
             return allUsers;
         };
