@@ -42,6 +42,15 @@ const anouncementEnds = {
             "status": "success",
             "data": oneAnouncement
         })
+    },
+
+    getAnounceByStatus(req, res) {
+        let sortedAnounce = anounceModel.getAnounceByStatus(req.params.status)
+
+        return res.status(200).json({
+            "status": "success",
+            "data":  sortedAnounce
+        })
     }
 }
 
