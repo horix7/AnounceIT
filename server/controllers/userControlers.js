@@ -38,6 +38,33 @@ const userInfo = {
                 }
                });
         }
+    },
+
+    userSignIn(req, res) {
+        let success;
+        if (account.login(req.body) == 'password does not match' || account.login(req,res) == 'user email already exist') {
+            console.log(infos)
+            return res.status(403).json({
+                "status": "error",
+                "error": "incorect inputs"
+            })
+        } else  {
+            console.log(account.login(req.body))
+            return res.status(200).json({
+                "status":"success",
+                "data":{
+                    "token": account.login(req.body).token,
+                    "id": account.login(req.body).id,
+                    "first_name":account.login(req.body).firstName,
+                    "last_name": account.login(req.body).lastName,
+                    "email":account.login(req.body).email,
+                    "address":account.login(req.body).address,
+                    "phoneNumber":account.login(req.body).phoneNumber,
+                    "is_admin":account.login(req.body).is_admin
+                }
+            })
+        }
+        
     }
 }
 console.log(typeof(account.createUser))
