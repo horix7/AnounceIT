@@ -84,6 +84,34 @@ function AnouncementInfo () {
             })
 
             return results
+        };
+
+        this.changeStatus = (anounceId) => {
+            let resAnounce
+            anouncementData.forEach( anounce => {
+                // console.log(anounce)
+                if (anounce.id == anounceId.id) {
+                    anounce.status = anounceId.status
+                    resAnounce =  anounce
+                    return anounce
+                } else {
+                    return 'no'
+                }
+            })
+            
+        }
+        this.deleteAnounce = (announceId) => {
+            let done;
+            anouncementData.forEach( anounce => {
+                if (announceId == anounce.id) {
+                    done = true
+                    anouncementData.splice(anouncementData.indexOf(anounce), 1)
+                }
+            })
+
+            if (done) {
+                return done
+            }
         }
 
     

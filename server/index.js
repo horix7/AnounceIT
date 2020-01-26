@@ -1,4 +1,5 @@
 import express from 'express';
+import anouncementEnds from './controllers/anounceController';
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -23,7 +24,9 @@ app.post('/api/v/announcement', anounceEndpoint.createAnounment);
 app.put('/api/v/anouncement/:id', anounceEndpoint.updateAnouncement);
 app.get('/api/v/announcement', anounceEndpoint.getAllAnouncement);
 app.get('/api/v/announcement/:id', anounceEndpoint.getOneAnouncement);
-app.get('/api/v/anouncement/:status', anounceEndpoint.getAnounceByStatus);
+app.get('/api/v/announcement/status/:status', anounceEndpoint.getAnounceByStatus);
+app.put('/api/v/announcement/status', anounceEndpoint.changeAnounceStatus);
+app.delete('/api/v/announcement/:id', anounceEndpoint.deleteAnouncement);
 
 const port = process.env.PORT || 8080;
 

@@ -51,6 +51,37 @@ const anouncementEnds = {
             "status": "success",
             "data":  sortedAnounce
         })
+    },
+
+    changeAnounceStatus(req, res) {
+        let newStatus = anounceModel.changeStatus(req.body);
+        console.log(newStatus)
+        if (newStatus == "no") {
+            return res.status(403).json({
+                "status": "error",
+                "error": " invalid id"
+            })
+        } else {
+            return res.status(200).json({
+                "status": "success",
+                "data": newStatus
+            })
+        }
+    },
+
+    deleteAnouncement(req, res) {
+        let deleteAnnounce = anounceModel.deleteAnounce(req.params.id)
+        if (deleteAnnounce) {
+            return res.status(200).json({
+                "status": "success",
+                "message": "delete done successfully " 
+            })
+        } else {
+            return res.status(200).json({
+                "status": "error",
+                "error": "invalid id" 
+            })
+        }
     }
 }
 
