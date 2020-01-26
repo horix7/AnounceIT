@@ -55,15 +55,28 @@ function AnouncementInfo () {
         }
 
         this.viewAllAnounce = () => {
-            
+            return anouncementData
         }
 
-        this.viewOneAnounce = () => {
+        this.viewOneAnounce = (anounceID) => {
+            let noId = false;
+            let oneAnounce;
+            anouncementData.forEach(anounce => {
+                if (anounceID == anounce.id) {
+                    noId = true
+                    oneAnounce =  anounce
+                }
+            })
 
+            if (noId) {
+                return oneAnounce
+            } else {
+                return "not working"
+            }
         }
 
         this.getAnounceByStatus = () => {
-
+            
         }
 
     
