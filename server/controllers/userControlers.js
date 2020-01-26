@@ -27,14 +27,14 @@ const userInfo = {
                 "status":"success",
                 "data":{
                     "token": account.createUser(req.body).token,
-                    "id": account.createUser(req.body).id,
-                    "first_name": account.createUser(req.body).firstName,
-                    "last_name": account.createUser(req.body).lastName,
-                    "email": account.createUser(req.body).email,
-                    "address": account.createUser(req.body).address,
-                    "phoneNumber": account.createUser(req.body).phoneNumber,
-                    "is_admin": account.createUser(req.body).is_admin,
-                    "password": account.createUser(req.body).password
+                    "id": account.createUser(req.body).data.id,
+                    "first_name": account.createUser(req.body).data.firstName,
+                    "last_name": account.createUser(req.body).data.lastName,
+                    "email": account.createUser(req.body).data.email,
+                    "address": account.createUser(req.body).data.address,
+                    "phoneNumber": account.createUser(req.body).data.phoneNumber,
+                    "is_admin": account.createUser(req.body).data.is_admin,
+                    "password": account.createUser(req.body).data.password
                 }
                });
         }
@@ -65,6 +65,18 @@ const userInfo = {
             })
         }
         
+    },
+    getAllUsers(req, res) {
+        return res.status(200).json({
+            "status": "success",
+            "data": account.findAllUsers()
+        })
+    },
+    getOneUser(req, res) {
+        return res.status(200).json({
+            "status": "success",
+            "data": account.findId(req.body.id)
+        })
     }
 }
 console.log(typeof(account.createUser))
@@ -82,3 +94,4 @@ export default userInfo
 //     phoneNumber: 'phone number',
 //     is_admin: 'is admin'
 // }
+
