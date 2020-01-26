@@ -17,24 +17,45 @@ function AnouncementInfo () {
             return anounceData
         };
 
-        this.updateAnounce = (anounceChange) => {
-            const newAnounce = {
-                id: anounceChange.id,
-                owner: anounceChange.id,
-                status: anounceChange.status,
-                text: anounceChange.text,
-                start_date: anounceChange.starts,
-                end_date: anounceChange.ends
+        this.updateAnounce = (anounceChange, changes) => {
+            let newAnounce;
+            let foundId = true;
+            anouncementData.forEach(anounce => {
+                if (anounce.id == anounceChange) {
+                     newAnounce = {
+                        id: changes.id,
+                        owner: changes.id,
+                        status: changes.status,
+                        text: changes.text,
+                        start_date: changes.starts,
+                        end_date: changes.ends
+                    }
+                    anounce = newAnounce
+                    foundId = false;
+                }
+            })
+            if (foundId) {
+                return 'anouncement does not exist'
             }
+
             return newAnounce
         };
 
-        this.deleteAnounce = () => {
-
+        this.deleteAnounce = (anouncementId) => {
+            let idFound = false
+            anouncementData.forEach( anounce => {
+                if (anouncementId == anounce.id) {
+                    anouncementData.splice(anouncementData.indexOf(anounce), 1)
+                    idFound = true
+                }
+            });
+            if (idFound) {
+                return true 
+            }
         }
 
         this.viewAllAnounce = () => {
-
+            
         }
 
         this.viewOneAnounce = () => {
