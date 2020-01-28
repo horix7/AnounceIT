@@ -2,7 +2,7 @@
   "name": "anounceit",
   "version": "1.0.0",
   "description": "Anouncement Project ",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "''",
     "start": "nodemon --exec babel-node ./server/index.js",
@@ -26,6 +26,7 @@
   "dependencies": {
     "bcrypt": "^3.0.6",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
