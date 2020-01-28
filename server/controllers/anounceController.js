@@ -34,6 +34,14 @@ const anouncementEnds = {
             "data": allanouncements
         })
 
+    },
+
+    getOneAnouncement(req, res) {
+        let oneAnouncement = anounceModel.viewOneAnounce(req.params.id)
+        return res.status(200).json({
+            "status": "success",
+            "data": oneAnouncement
+        })
     }
 }
 

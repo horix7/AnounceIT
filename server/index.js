@@ -22,6 +22,7 @@ app.get('/api/v/oneuser', userEndpoint.getOneUser);
 app.post('/api/v/announcement', anounceEndpoint.createAnounment);
 app.put('/api/v/anouncement/:id', anounceEndpoint.updateAnouncement);
 app.get('/api/v/announcement', anounceEndpoint.getAllAnouncement);
+app.get('/api/v/announcement/:id', anounceEndpoint.getOneAnouncement);
 
 const port = process.env.PORT || 8080;
 
