@@ -1,120 +1,107 @@
 import anouncementData from './anouncementData';
 
-function AnouncementInfo () {
-
+class AnouncementInfo {
+    constructor() {
         this.createAnounce = (anounce) => {
-        
             const anounceData = {
-                id:anounce.id,
-                owner:anounce.id,
-                status:anounce.status||"pending",
-                text:anounce.text,
-                start_date:anounce.starts,
-                end_date:anounce.ends
-            }
-
-            anouncementData.push(anounceData)
-            return anounceData
+                id: anounce.id,
+                owner: anounce.id,
+                status: anounce.status || "pending",
+                text: anounce.text,
+                start_date: anounce.starts,
+                end_date: anounce.ends
+            };
+            anouncementData.push(anounceData);
+            return anounceData;
         };
-
         this.updateAnounce = (anounceChange, changes) => {
             let newAnounce;
             let foundId = true;
             anouncementData.forEach(anounce => {
                 if (anounce.id == anounceChange) {
-                     newAnounce = {
+                    newAnounce = {
                         id: changes.id,
                         owner: changes.id,
                         status: changes.status,
                         text: changes.text,
                         start_date: changes.starts,
                         end_date: changes.ends
-                    }
-                    anounce = newAnounce
+                    };
+                    anounce = newAnounce;
                     foundId = false;
                 }
-            })
+            });
             if (foundId) {
-                return 'anouncement does not exist'
+                return 'anouncement does not exist';
             }
-
-            return newAnounce
+            return newAnounce;
         };
-
         this.deleteAnounce = (anouncementId) => {
-            let idFound = false
-            anouncementData.forEach( anounce => {
+            let idFound = false;
+            anouncementData.forEach(anounce => {
                 if (anouncementId == anounce.id) {
-                    anouncementData.splice(anouncementData.indexOf(anounce), 1)
-                    idFound = true
+                    anouncementData.splice(anouncementData.indexOf(anounce), 1);
+                    idFound = true;
                 }
             });
             if (idFound) {
-                return true 
+                return true;
             }
-        }
-
+        };
         this.viewAllAnounce = () => {
-            return anouncementData
-        }
-
+            return anouncementData;
+        };
         this.viewOneAnounce = (anounceID) => {
             let noId = false;
             let oneAnounce;
             anouncementData.forEach(anounce => {
                 if (anounceID == anounce.id) {
-                    noId = true
-                    oneAnounce =  anounce
+                    noId = true;
+                    oneAnounce = anounce;
                 }
-            })
-
+            });
             if (noId) {
-                return oneAnounce
-            } else {
-                return "not working"
+                return oneAnounce;
             }
-        }
-
-        this.getAnounceByStatus = (status) => {
-            let results  = []
-            anouncementData.forEach( anounce => {
-                if (anounce.status == status) {
-                    results.push(anounce)
-                }
-            })
-
-            return results
+            else {
+                return "not working";
+            }
         };
-
-        this.changeStatus = (anounceId) => {
-            let resAnounce
-            anouncementData.forEach( anounce => {
-                // console.log(anounce)
-                if (anounce.id == anounceId.id) {
-                    anounce.status = anounceId.status
-                    resAnounce =  anounce
-                    return anounce
-                } else {
-                    return 'no'
+        this.getAnounceByStatus = (status) => {
+            let results = [];
+            anouncementData.forEach(anounce => {
+                if (anounce.status == status) {
+                    results.push(anounce);
                 }
-            })
-            
-        }
+            });
+            return results;
+        };
+        this.changeStatus = (anounceId) => {
+            let resAnounce;
+            anouncementData.forEach(anounce => {
+                if (anounce.id == anounceId.id) {
+                    anounce.status = anounceId.status;
+                    resAnounce = anounce;
+                    return anounce;
+                }
+                else {
+                    return 'no';
+                }
+            });
+        };
         this.deleteAnounce = (announceId) => {
             let done;
-            anouncementData.forEach( anounce => {
+            anouncementData.forEach(anounce => {
                 if (announceId == anounce.id) {
-                    done = true
-                    anouncementData.splice(anouncementData.indexOf(anounce), 1)
+                    done = true;
+                    anouncementData.splice(anouncementData.indexOf(anounce), 1);
                 }
-            })
-
+            });
             if (done) {
-                return done
+                return done;
             }
-        }
-
-    
+        };
+    }
 }
 
-module.exports = new AnouncementInfo()
+export default new AnouncementInfo()

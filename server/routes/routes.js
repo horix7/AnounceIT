@@ -1,7 +1,9 @@
 
 // const express = require('express')
-// const userEndpoint = require('../controllers/userControlers')
 
 // const app = express()
+// const route = express.Router()
 
-// app.post('api/v/usersignup', userInfo.createUser);
+
+
+// export const routers = route;

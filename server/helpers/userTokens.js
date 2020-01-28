@@ -1,26 +1,22 @@
 
-const jwt = require('jsonwebtoken');
+import { sign, verify } from 'jsonwebtoken';
 
 const tokens = {
     encode(payload) {
-        const token = jwt.sign(payload, 'secretKey')
+        const token = sign(payload, 'secretKey')
         return token 
     },
     decode(token) {
-        const response = jwt.verify(token, 'secretKey')
+        const response = verify(token, 'secretKey')
         return response
     }
 }
 
-// let man = tokens.encode('amana')
-// console.log(man)
 
-let newMan = tokens.encode('man')
-
-console.log(newMan)
 
 let verifyToken = (req, res, next) => {
     const availableToken = localStorage.setItem('token', token)
+    
 
     if (localStorage.token !== token) {
         res.sendStatus(403)
@@ -30,4 +26,4 @@ let verifyToken = (req, res, next) => {
     }
 }
 
-module.exports = tokens
+export default tokens
