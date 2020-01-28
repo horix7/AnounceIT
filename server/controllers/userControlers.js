@@ -81,7 +81,6 @@ const userInfo = {
         })
     }
 }
-console.log(typeof(account.createUser))
 
 export default userInfo
 

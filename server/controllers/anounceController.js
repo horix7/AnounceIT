@@ -55,7 +55,6 @@ const anouncementEnds = {
 
     changeAnounceStatus(req, res) {
         let newStatus = anounceModel.changeStatus(req.body);
-        console.log(newStatus)
         if (newStatus == "no") {
             return res.status(403).json({
                 "status": "error",

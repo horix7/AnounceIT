@@ -1,5 +1,5 @@
 import express from 'express';
-import anouncementEnds from './controllers/anounceController';git 
+import anouncementEnds from './controllers/anounceController';
 const app = express();
 
 import { urlencoded, json } from 'body-parser';
@@ -9,11 +9,8 @@ import anounceEndpoint from './controllers/anounceController';
 app.use(urlencoded({ extended: false}));
 app.use(json());
 
-app.get('/api/v/anouncement', (req,res) => {
-    res.send(user)
-})
 app.get('/', (req, res) => {
-  return res.status(200).send({'messagge' : 'message working yay ' });
+  return res.status(200).send({'messagge' : 'welcome to  anounce it' });
 })
 
 app.post('/api/v1/auth/signup', userEndpoint.userSignUp);
@@ -30,5 +27,5 @@ app.delete('/api/v1/announcement/:id', anounceEndpoint.deleteAnouncement);
 
 const port = process.env.PORT || 8080;
 
-app.listen(port, () => console.log(`listenning to port ${port}.. ..... .....`))
+app.listen(port)
 

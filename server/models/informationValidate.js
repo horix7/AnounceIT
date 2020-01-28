@@ -48,26 +48,5 @@ const validates = {
 
 }
 
-
-let man = {
-    "id": 12,
-    "email": "emaem@ail.com",
-    "firstName": "mmansa",
-    "lastName": "my last name",
-    "address": 'my address',
-    "phoneNumber": "7845621212631",
-    "password": "man is home now",
-    "is_admin": "false" 
-}
-
-validate(man,validates.schemas.UserSchema, (err, res) => {
-    if (err) {
-        console.log('error has occured')
-    } else {
-        console.log(res)
-    }
-})
-
-
 export default  validates;
 
