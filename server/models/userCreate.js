@@ -2,6 +2,8 @@ import { hashSync } from 'bcryptjs';
 
 import userData, { allUsers } from './userData';
 
+const tokenMaker = require('../helpers/userTokens');
+
 class User {
     constructor() {
         this.message;
@@ -24,7 +26,12 @@ class User {
                     is_admin: newUser.is_admin
                 };
                 userData.allUsers.push(inputData);
-                return inputData;
+                const token = tokenMaker.encode(newUser.email)
+                localStorage.setItem('token', token)
+                return {
+                    data: inputData,
+                    token: token
+                }
             }
             else {
                 // this.message = `this email ${newUser.email} is already registered`

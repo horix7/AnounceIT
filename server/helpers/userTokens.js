@@ -12,42 +12,22 @@ const tokens = {
     }
 }
 
-
-const checkToken =(req,res,next)=>{
-    const bearerHeader =req.get("token");
-
-    if (typeof bearerHeader == 'undefined') {
-        return res.status(403).json({
-            "status":"error",
-            "error":"you are not signed in "
-        });
-    } else {
-    let decoded=tokenHelper.decode(bearerHeader);
-    req.tokenId=decoded.id
-    req.tokenEmail=decoded.email
-    req.tokenType=decoded.is_admin
-    next();
-    }
-}
-
 // let man = tokens.encode('amana')
 // console.log(man)
 
-// let newMan = tokens.decode(man)
+let newMan = tokens.encode('man')
 
-// console.log(newMan)
+console.log(newMan)
 
-// let verifyToken = (req, res, next) => {
-//     const bearerHeader = req.headers['authorization'];
+let verifyToken = (req, res, next) => {
+    const availableToken = localStorage.setItem('token', token)
 
-//     if (typeof bearerHeader == 'undefined') {
-//         res.sendStatus(403)
-//     } else {
-//         const tok =  bearerHeader.split(' ')
-//         const bearerToken = tok[1]
-//         req.token = bearerToken
-//         next();
-//     }
-// }
+    if (localStorage.token !== token) {
+        res.sendStatus(403)
+    } else {
+        req.token = localStorage.token
+        next();
+    }
+}
 
-module.exports = {tokens,  checkToken}
+module.exports = tokens

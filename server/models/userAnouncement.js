@@ -1,8 +1,9 @@
 import anouncementData from './anouncementData';
 
-class anouncementInfo {
-    constructor () {
+function AnouncementInfo () {
+
         this.createAnounce = (anounce) => {
+        
             const anounceData = {
                 id:anounce.id,
                 owner:anounce.id,
@@ -12,8 +13,39 @@ class anouncementInfo {
                 end_date:anounce.ends
             }
 
-            anounceData.push(anounce)
+            anouncementData.push(anounceData)
+            return anounceData
         };
 
-    }
+        this.updateAnounce = (anounceChange) => {
+            const newAnounce = {
+                id: anounceChange.id,
+                owner: anounceChange.id,
+                status: anounceChange.status,
+                text: anounceChange.text,
+                start_date: anounceChange.starts,
+                end_date: anounceChange.ends
+            }
+            return newAnounce
+        };
+
+        this.deleteAnounce = () => {
+
+        }
+
+        this.viewAllAnounce = () => {
+
+        }
+
+        this.viewOneAnounce = () => {
+
+        }
+
+        this.getAnounceByStatus = () => {
+
+        }
+
+    
 }
+
+module.exports = new AnouncementInfo()
