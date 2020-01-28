@@ -75,8 +75,15 @@ function AnouncementInfo () {
             }
         }
 
-        this.getAnounceByStatus = () => {
-            
+        this.getAnounceByStatus = (status) => {
+            let results  = []
+            anouncementData.forEach( anounce => {
+                if (anounce.status == status) {
+                    results.push(anounce)
+                }
+            })
+
+            return results
         }
 
     

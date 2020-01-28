@@ -6,7 +6,7 @@ const userInfo = {
         if ( account == 'undefined') {
             return res.status(403).json({
                 "status":"error",
-                "error":"undefined mfck"
+                "error":"undefined account"
             });
         }
         else if (account.createUser(req.body) == 'invalid') {
