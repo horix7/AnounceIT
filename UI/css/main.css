@@ -389,6 +389,13 @@ h4 {
   .alert .content textarea {
     width: 100%;
   }
+
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+    color: deepskyblue;
+    width: 12px;
+  }
 /* 
    {
       border: 1px solid deepskyblue;
