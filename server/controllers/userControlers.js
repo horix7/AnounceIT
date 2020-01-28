@@ -1,5 +1,5 @@
 
-const account = require('../models/userCreate')
+import account from '../models/userCreate'
 
 const userInfo = {
     userSignUp(req, res) {
@@ -23,18 +23,20 @@ const userInfo = {
             }); 
           
         } else {
+            const { id, firstName, lastName, email, address, phoneNumber, password } = account.createUser(req.body).data
+            const { token } = account.createUser(req.body)
             return res.status(201).json({
                 "status":"success",
                 "data":{
-                    "token": account.createUser(req.body).token,
-                    "id": account.createUser(req.body).data.id,
-                    "first_name": account.createUser(req.body).data.firstName,
-                    "last_name": account.createUser(req.body).data.lastName,
-                    "email": account.createUser(req.body).data.email,
-                    "address": account.createUser(req.body).data.address,
-                    "phoneNumber": account.createUser(req.body).data.phoneNumber,
-                    "is_admin": account.createUser(req.body).data.is_admin,
-                    "password": account.createUser(req.body).data.password
+                    "token": token,
+                    "id":id,
+                    "first_name": firstName,
+                    "last_name": lastName,
+                    "email": email,
+                    "address": address,
+                    "phoneNumber": phoneNumber,
+                    "is_admin": is_admin,
+                    "password": password
                 }
                });
         }
@@ -49,18 +51,18 @@ const userInfo = {
                 "error": "incorect inputs"
             })
         } else  {
-            console.log(account.login(req.body))
+            const { token, id, firstName, lastName, email, phoneNumber, address, is_admin } = account.login(req.body)
             return res.status(200).json({
                 "status":"success",
                 "data":{
-                    "token": account.login(req.body).token,
-                    "id": account.login(req.body).id,
-                    "first_name":account.login(req.body).firstName,
-                    "last_name": account.login(req.body).lastName,
-                    "email":account.login(req.body).email,
-                    "address":account.login(req.body).address,
-                    "phoneNumber":account.login(req.body).phoneNumber,
-                    "is_admin":account.login(req.body).is_admin
+                    "token": token,
+                    "id": id,
+                    "first_name":firstName,
+                    "last_name": lastName,
+                    "email": email,
+                    "address": address,
+                    "phoneNumber": phoneNumber,
+                    "is_admin": is_admin
                 }
             })
         }
@@ -79,19 +81,7 @@ const userInfo = {
         })
     }
 }
-console.log(typeof(account.createUser))
-// console.log(account.createUser({}))
 
 export default userInfo
 
-// {
-//     token: 'man',
-//     id: 12,
-//     firstName: 'paul',
-//     lastName: 'peter',
-//     email: 'email',
-//     address: 'address',
-//     phoneNumber: 'phone number',
-//     is_admin: 'is admin'
-// }
 

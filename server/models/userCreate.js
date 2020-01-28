@@ -2,7 +2,7 @@ import { hashSync } from 'bcryptjs';
 
 import userData, { allUsers } from './userData';
 
-const tokenMaker = require('../helpers/userTokens');
+import { encode, decode } from '../helpers/userTokens';
 
 class User {
     constructor() {
@@ -12,9 +12,8 @@ class User {
             return foundId;
         };
         this.createUser = (newUser) => {
-            // if (typeof(newUser) == "object")
             const usedEmail = userData.allUsers.find(userEmail => userEmail.email === newUser.email);
-            if (usedEmail !== 'undefined') {
+            if (usedEmail) {
                 let inputData = {
                     id: allUsers.length + 1,
                     email: newUser.email,
@@ -26,7 +25,7 @@ class User {
                     is_admin: newUser.is_admin
                 };
                 userData.allUsers.push(inputData);
-                const token = tokenMaker.encode(newUser.email)
+                const token = encode(newUser.email)
                 localStorage.setItem('token', token)
                 return {
                     data: inputData,
@@ -34,7 +33,6 @@ class User {
                 }
             }
             else {
-                // this.message = `this email ${newUser.email} is already registered`
                 let res = 'invalid';
                 return res;
             }
@@ -51,12 +49,9 @@ class User {
             })
 
             if (checker1) {
-                // let checker2;
                 if (infos.password == userInput.password) {
                     return infos
                 } else {
-                    console.log(allUsers)
-                    console.log(infos)
                    return 'password does not match'
                 }
             } else {
@@ -70,7 +65,5 @@ class User {
     }
 }
 
-console.log(userData)
-console.log(allUsers)
+export default new User()
 
-module.exports = new User()

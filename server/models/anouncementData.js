@@ -1,3 +1,4 @@
 const anouncementData = []
 
-module.exports = anouncementData
+export default anouncementData
+

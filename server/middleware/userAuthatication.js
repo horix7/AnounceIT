@@ -1,4 +1,4 @@
-const token = require('../helpers/userTokens')
+import token from '../helpers/userTokens';
 
 const checkToken =(req,res,next)=>{
     const bearerHeader =req.get("token");
@@ -16,3 +16,5 @@ const checkToken =(req,res,next)=>{
     next();
     }
 }
+
+

@@ -1,30 +1,31 @@
 import express from 'express';
+import anouncementEnds from './controllers/anounceController';
 const app = express();
 
-const bodyParser = require('body-parser');
-const userEndpoint = require('./controllers/userControlers').default;
-const anounceEndpoint = require('./controllers/anounceController').default;
+import { urlencoded, json } from 'body-parser';
+import userEndpoint from './controllers/userControlers';
+import anounceEndpoint from './controllers/anounceController';
 
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(bodyParser.json());
+app.use(urlencoded({ extended: false}));
+app.use(json());
 
-app.get('/api/v/anouncement', (req,res) => {
-    res.send(user)
-})
 app.get('/', (req, res) => {
-  return res.status(200).send({'messagge' : 'message working yay ' });
+  return res.status(200).send({'messagge' : 'welcome to  anounce it' });
 })
 
-app.post('/api/v/auth/signup', userEndpoint.userSignUp);
-app.post('/api/v//auth/signin', userEndpoint.userSignIn);
-app.get('/api/v/allusers', userEndpoint.getAllUsers);
-app.get('/api/v/oneuser', userEndpoint.getOneUser);
-app.post('/api/v/announcement', anounceEndpoint.createAnounment);
-app.put('/api/v/anouncement/:id', anounceEndpoint.updateAnouncement);
-app.get('/api/v/announcement', anounceEndpoint.getAllAnouncement);
-app.get('/api/v/announcement/:id', anounceEndpoint.getOneAnouncement);
-app.get('/api/v/anouncement/:status', anounceEndpoint.getAnounceByStatus);
+app.post('/api/v1/auth/signup', userEndpoint.userSignUp);
+app.post('/api/v1//auth/signin', userEndpoint.userSignIn);
+app.get('/api/v1/allusers', userEndpoint.getAllUsers);
+app.get('/api/v1/oneuser', userEndpoint.getOneUser);
+app.post('/api/v1/announcement', anounceEndpoint.createAnounment);
+app.put('/api/v1/anouncement/:id', anounceEndpoint.updateAnouncement);
+app.get('/api/v1/announcements', anounceEndpoint.getAllAnouncement);
+app.get('/api/v1/announcement/:id', anounceEndpoint.getOneAnouncement);
+app.get('/api/v1/announcement/:status', anounceEndpoint.getAnounceByStatus);
+app.put('/api/v1/announcement/status', anounceEndpoint.changeAnounceStatus);
+app.delete('/api/v1/announcement/:id', anounceEndpoint.deleteAnouncement);
 
 const port = process.env.PORT || 8080;
 
-app.listen(port, () => console.log(`listenning to port ${port}.. ..... .....`))
+app.listen(port)
+
