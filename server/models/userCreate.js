@@ -15,15 +15,15 @@ class User {
             if (usedEmail !== 'undefined') {
                 let inputData = {
                     id: allUsers.length + 1,
-                    email: newUser.email || '',
-                    firstName: newUser.firstName || '',
-                    lastName: newUser.lastName || '',
-                    address: newUser.address || '',
-                    phoneNumber: newUser.phoneNumber || '',
-                    password: newUser.password || '',
-                    is_admin: newUser.is_admin || ''
+                    email: newUser.email,
+                    firstName: newUser.firstName,
+                    lastName: newUser.lastName,
+                    address: newUser.address,
+                    phoneNumber: newUser.phoneNumber,
+                    password: newUser.password,
+                    is_admin: newUser.is_admin
                 };
-                allUsers.push(inputData);
+                userData.allUsers.push(inputData);
                 return inputData;
             }
             else {
@@ -32,19 +32,31 @@ class User {
                 return res;
             }
         };
-        this.login = (userInput) => {
-            const checkEmail = allUsers.find(info => info.email === userInput.email)
 
-            if (checkEmail) {
-                if ( info.password == userInput.password) {
-                    return  true 
+        this.login = (userInput) => {
+            let checker1;
+            let infos;
+            allUsers.forEach( info => {
+                if (info.email == userInput.email) {
+                    checker1 = true
+                    infos = info
+                }
+            })
+
+            if (checker1) {
+                // let checker2;
+                if (infos.password == userInput.password) {
+                    return infos
                 } else {
-                    return "your password does not match"
+                    console.log(allUsers)
+                    console.log(infos)
+                   return 'password does not match'
                 }
             } else {
                 return 'user email already exist'
             }
         };
+
         this.findAllUsers = () => {
             return allUsers;
         };
@@ -52,5 +64,6 @@ class User {
 }
 
 console.log(userData)
+console.log(allUsers)
 
 module.exports = new User()

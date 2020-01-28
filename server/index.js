@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 })
 // 
 app.post('/api/v/usersignup', userEndpoint.userSignUp);
+app.post('/api/v/usersignin', userEndpoint.userSignIn);
 
 const port = process.env.PORT || 8080;
 
