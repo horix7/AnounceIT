@@ -1,2 +1,5 @@
 const allUsers = [];
-module.exports = {allUsers}
+
+export default {allUsers}
+
+

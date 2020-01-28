@@ -1,5 +1,5 @@
 import { object, number, string, boolean, date, validate } from 'joi';
-    
+
 
 const validates = {
     
@@ -70,3 +70,4 @@ validate(man,validates.schemas.UserSchema, (err, res) => {
 
 
 export default  validates;
+

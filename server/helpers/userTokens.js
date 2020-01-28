@@ -16,7 +16,7 @@ const tokens = {
 
 let verifyToken = (req, res, next) => {
     const availableToken = localStorage.setItem('token', token)
-    
+
 
     if (localStorage.token !== token) {
         res.sendStatus(403)
@@ -27,3 +27,4 @@ let verifyToken = (req, res, next) => {
 }
 
 export default tokens
+
