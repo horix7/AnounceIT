@@ -3,7 +3,7 @@ const app = express();
 
 const bodyParser = require('body-parser');
 const userEndpoint = require('./controllers/userControlers').default;
-const anounceEndpoint = require('./controllers/anounceController');
+const anounceEndpoint = require('./controllers/anounceController').default;
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
@@ -22,7 +22,7 @@ app.post('/api/v//auth/signin', userEndpoint.userSignIn);
 app.get('/api/v/allusers', userEndpoint.getAllUsers);
 app.get('/api/v/oneuser', userEndpoint.getOneUser);
 app.post('/api/v/announcement', anounceEndpoint.createAnounment);
-
+app.put('/api/v/anouncement/:id', anounceEndpoint.updateAnouncement);
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => console.log(`listenning to port ${port}.. ..... .....`))

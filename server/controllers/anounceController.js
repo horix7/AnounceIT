@@ -1,15 +1,32 @@
-const anouncementInfo = require('../models/userAnouncement')
+import anounceModel from '../models/userAnouncement';
 
 const anouncementEnds = {
     createAnounment(req, res) {
-        let announcement = anouncementInfo.createAnounce(req.body)
+        let announcement =   anounceModel.createAnounce(req.body)
         return res.status(201).json({
             "status":"success",
             "data":announcement
         });
 
+    },
+
+    updateAnouncement(req, res) {
+        let changeId = anounceModel.updateAnounce(req.params.id, req.body)
+
+        if (changeId == 'anouncement does not exist') {
+            return res.status(403).json({
+                "status": "error",
+                "error": "your id provided does not exist"
+            })
+        } else {
+            return res.status(200).json({
+                "status": "success",
+                "data": changeId
+            })
+        }
+
     }
 }
 
 
-module.exports = anouncementEnds
+export default anouncementEnds
