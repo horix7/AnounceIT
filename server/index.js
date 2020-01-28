@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 app.get('/api/v/anouncement', (req,res) => {
     res.send(user)
 })
-
-
 app.get('/', (req, res) => {
   return res.status(200).send({'messagge' : 'message working yay ' });
 })
@@ -23,6 +21,8 @@ app.get('/api/v/allusers', userEndpoint.getAllUsers);
 app.get('/api/v/oneuser', userEndpoint.getOneUser);
 app.post('/api/v/announcement', anounceEndpoint.createAnounment);
 app.put('/api/v/anouncement/:id', anounceEndpoint.updateAnouncement);
+app.get('/api/v/announcement', anounceEndpoint.getAllAnouncement);
+
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => console.log(`listenning to port ${port}.. ..... .....`))

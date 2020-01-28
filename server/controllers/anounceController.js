@@ -25,6 +25,15 @@ const anouncementEnds = {
             })
         }
 
+    },
+
+    getAllAnouncement(req, res) {
+        let allanouncements  = anounceModel.viewAllAnounce()
+        return res.status(200).json({
+            "status": "success",
+            "data": allanouncements
+        })
+
     }
 }
 
