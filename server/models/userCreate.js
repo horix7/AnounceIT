@@ -2,7 +2,7 @@ import { hashSync } from 'bcryptjs';
 
 import userData, { allUsers } from './userData';
 
-import { encode, decode } from '../helpers/userTokens';
+import tokens from '../helpers/userTokens';
 
 class User {
     constructor() {
@@ -13,24 +13,23 @@ class User {
         };
         this.createUser = (newUser) => {
             const usedEmail = userData.allUsers.find(userEmail => userEmail.email === newUser.email);
-            if (usedEmail) {
-                let inputData = {
-                    id: allUsers.length + 1,
-                    email: newUser.email,
-                    firstName: newUser.firstName,
-                    lastName: newUser.lastName,
-                    address: newUser.address,
-                    phoneNumber: newUser.phoneNumber,
-                    password: newUser.password,
-                    is_admin: newUser.is_admin
+            const checked = usedEmail !== 'undefined'
+            if (checked) {
+                const inputData = {
+                    "id": userData.allUsers.length + 1,
+                    "token": tokens.encode(newUser.email),
+                    "email": newUser.email,
+                    "first_name": newUser.firstName,
+                    "last_name": newUser.lastName,
+                    "address": newUser.address,
+                    "phoneNumber": newUser.phoneNumber,
+                    "password": newUser.password,
+                    "is_admin": newUser.is_admin
                 };
-                userData.allUsers.push(inputData);
-                const token = encode(newUser.email)
-                localStorage.setItem('token', token)
-                return {
-                    data: inputData,
-                    token: token
-                }
+                userData.allUsers.push(inputData); 
+
+                return inputData
+               
             }
             else {
                 let res = 'invalid';
@@ -39,28 +38,18 @@ class User {
         };
 
         this.login = (userInput) => {
-            let checker1;
-            let infos;
-            allUsers.forEach( info => {
-                if (info.email == userInput.email) {
-                    checker1 = true
-                    infos = info
-                }
-            })
+            let resUser = userData.allUsers.find( user => user.email == userInput.email)
 
-            if (checker1) {
-                if (infos.password == userInput.password) {
-                    return infos
-                } else {
-                   return 'password does not match'
-                }
+            if(resUser) {
+                return resUser
             } else {
-                return 'user email already exist'
+                return 'password does not match'
             }
-        };
+        }
+           
 
         this.findAllUsers = () => {
-            return allUsers;
+            return userData.allUsers;
         };
     }
 }
