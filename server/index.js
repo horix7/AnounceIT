@@ -1,4 +1,4 @@
-const valids = require('./middleware/informationValidate');
+import valids from './middleware/informationValidate';
 
 import express from 'express';
 const app = express();
