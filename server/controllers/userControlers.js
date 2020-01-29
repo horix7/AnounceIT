@@ -61,27 +61,6 @@ const userInfo = {
 
 export default userInfo
 
-// {
-//     "token": token,
-//     "id":id,
-//     "first_name": firstName,
-//     "last_name": lastName,
-//     "email": email,
-//     "address": address,
-//     "phoneNumber": phoneNumber,
-//     "is_admin": is_admin,
-//     "password": password
-// }
 
 
-// {
-//     "token": token,
-//     "id": id,
-//     "first_name":firstName,
-//     "last_name": lastName,
-//     "email": email,
-//     "address": address,
-//     "phoneNumber": phoneNumber,
-//     "is_admin": is_admin
-// }
 
