@@ -10,7 +10,6 @@ const userInfo = {
             });
         }
         else if (account.createUser(req.body) == 'invalid') {
-            console.log(req.body)
             return res.status(403).json({
                 "status":"error",
                 "error":"you provided invalid information"
@@ -22,22 +21,10 @@ const userInfo = {
                 "error":"you provided invalid information"
             }); 
           
-        } else {
-            const { id, firstName, lastName, email, address, phoneNumber, password } = account.createUser(req.body).data
-            const { token } = account.createUser(req.body)
-            return res.status(201).json({
+        } else { 
+            return res.status(200).json({
                 "status":"success",
-                "data":{
-                    "token": token,
-                    "id":id,
-                    "first_name": firstName,
-                    "last_name": lastName,
-                    "email": email,
-                    "address": address,
-                    "phoneNumber": phoneNumber,
-                    "is_admin": is_admin,
-                    "password": password
-                }
+                "data": account.createUser(req.body)
                });
         }
     },
@@ -45,25 +32,15 @@ const userInfo = {
     userSignIn(req, res) {
         let success;
         if (account.login(req.body) == 'password does not match' || account.login(req,res) == 'user email already exist') {
-            console.log(infos)
             return res.status(403).json({
                 "status": "error",
                 "error": "incorect inputs"
             })
         } else  {
-            const { token, id, firstName, lastName, email, phoneNumber, address, is_admin } = account.login(req.body)
+            const loginInfo = account.login(req.body)
             return res.status(200).json({
                 "status":"success",
-                "data":{
-                    "token": token,
-                    "id": id,
-                    "first_name":firstName,
-                    "last_name": lastName,
-                    "email": email,
-                    "address": address,
-                    "phoneNumber": phoneNumber,
-                    "is_admin": is_admin
-                }
+                "data": loginInfo
             })
         }
         
@@ -84,4 +61,27 @@ const userInfo = {
 
 export default userInfo
 
+// {
+//     "token": token,
+//     "id":id,
+//     "first_name": firstName,
+//     "last_name": lastName,
+//     "email": email,
+//     "address": address,
+//     "phoneNumber": phoneNumber,
+//     "is_admin": is_admin,
+//     "password": password
+// }
+
+
+// {
+//     "token": token,
+//     "id": id,
+//     "first_name":firstName,
+//     "last_name": lastName,
+//     "email": email,
+//     "address": address,
+//     "phoneNumber": phoneNumber,
+//     "is_admin": is_admin
+// }
 
