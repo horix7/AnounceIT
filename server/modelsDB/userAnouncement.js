@@ -105,3 +105,4 @@ class AnouncementInfo {
 }
 
 export default new AnouncementInfo()
+

@@ -46,5 +46,3 @@ const validss = {
 }
 
 module.exports  = validss
-
-
