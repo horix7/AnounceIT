@@ -17,4 +17,3 @@ const checkToken = (req,res,next) => {
 }
 
 export default checkToken;
-
