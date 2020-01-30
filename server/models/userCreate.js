@@ -8,8 +8,14 @@ class User {
     constructor() {
         this.message;
         this.findId = (id) => {
-            let foundId = allUsers.find(userId => userId.id === id);
-            return foundId;
+            let foundId = userData.allUsers.find(userId => userId.id === id);
+           let findIdB = foundId !== 'undefined'
+
+           if(findIdB) {
+               return foundId
+           } else {
+               return 'no'
+           }
         };
         this.createUser = (newUser) => {
             const usedEmail = userData.allUsers.find(userEmail => userEmail.email === newUser.email);

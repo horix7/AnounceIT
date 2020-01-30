@@ -76,7 +76,7 @@ const anouncementEnds = {
                 "message": "delete done successfully " 
             })
         } else {
-            return res.status(200).json({
+            return res.status(403).json({
                 "status": "error",
                 "error": "invalid id" 
             })

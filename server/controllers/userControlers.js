@@ -22,7 +22,7 @@ const userInfo = {
             }); 
           
         } else { 
-            return res.status(200).json({
+            return res.status(201).json({
                 "status":"success",
                 "data": account.createUser(req.body)
                });
@@ -52,10 +52,18 @@ const userInfo = {
         })
     },
     getOneUser(req, res) {
-        return res.status(200).json({
-            "status": "success",
-            "data": account.findId(req.body.id)
-        })
+        if (account.findId(req.body.id) !== 'no'){
+            return res.status(200).json({
+                "status": "success",
+                "data": account.findId(req.body.id)
+            })
+        } else {
+            return res.status(403).json({
+                "status": "error",
+                "error": "cant find the id"
+            })
+        }
+        
     }
 }
 
