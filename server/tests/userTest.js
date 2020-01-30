@@ -21,7 +21,7 @@ const oneUser = {
 
 
 describe('user tests', () => {
-    it('create account with valid data', () => {
+    it('user should create account with valid data', () => {
       chai.request(app)
         .post('/api/v1/auth/signup')
         .send(userTest)
@@ -31,7 +31,7 @@ describe('user tests', () => {
         })
     });
 
-    it('user can sign in the system', () => {
+    it('user should sign in the system', () => {
         chai.request(app)
           .post('/api/v1/auth/signin')
           .send(userTest)
@@ -41,7 +41,7 @@ describe('user tests', () => {
           })
       });
 
-      it('admin user can  get all users', () => {
+      it('admin user should  get all users', () => {
         chai.request(app)
           .get('/api/v1/allusers')
           .send()
@@ -50,7 +50,7 @@ describe('user tests', () => {
             res.status.should.equal(200)
           })
       });
-      it('admin user can  get one particular users', () => {
+      it('admin user should get one particular users', () => {
         chai.request(app)
           .get('/api/v1/oneuser')
           .send(oneUser)

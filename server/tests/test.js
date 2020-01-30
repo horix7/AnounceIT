@@ -1,8 +1,6 @@
 
 process.env.NODE_ENV = 'test';
 
-import anouncement from '../models/userAnouncement';
-
 import { should, use, request } from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../index';
@@ -26,7 +24,7 @@ const changeAnounce = {
 
   describe('anouncement test', () => {
   
-      it('can create the anouncement', () => {
+      it('User should create an anouncement ', () => {
         request(app)
           .post('/api/v1/announcement')
           .send(announcementTestOne)
@@ -35,7 +33,7 @@ const changeAnounce = {
           });
       });
 
-      it('can update the anouncement', () => {
+      it('user should update the anouncement', () => {
         request(app)
           .put('/api/v1/anouncement/1')
           .send()
@@ -54,7 +52,7 @@ const changeAnounce = {
           });
       });
 
-      it('get one anouncement by id', () => {
+      it('should get one anouncement by id', () => {
         request(app)
           .get(`/api/v1/announcement/1`)
           .send()
@@ -74,7 +72,3 @@ const changeAnounce = {
       });
 
   });
-
-
-
-
