@@ -1,3 +1,6 @@
+
+process.env.NODE_ENV = 'test';
+
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../index';
@@ -60,3 +63,4 @@ describe('user tests', () => {
           })
       })
   })
+
