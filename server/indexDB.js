@@ -17,17 +17,17 @@ app.get('/', (req, res) => {
 
 })
 
-app.post('/api/v1/auth/signup', valids.inputsValids(valids.schemas.UserSchema), userEndpoint.userSignUp);
-app.post('/api/v1/auth/signin', userEndpoint.userSignIn);
-app.get('/api/v1/allusers', userEndpoint.getAllUsers);
-app.get('/api/v1/oneuser', userEndpoint.getOneUser);
-app.post('/api/v1/announcement',valids.inputsValids(valids.schemas.AnouncementSchema), anounceEndpoint.createAnounment);
-app.put('/api/v1/anouncement/:id', anounceEndpoint.updateAnouncement);
-app.get('/api/v1/announcements', anounceEndpoint.getAllAnouncement);
-app.get('/api/v1/announcement/:id', anounceEndpoint.getOneAnouncement);
-app.get('/api/v1/announcement/:status', anounceEndpoint.getAnounceByStatus);
-app.put('/api/v1/announcement/status', valids.inputsValids(valids.schemas.changeAnnouncement), anounceEndpoint.changeAnounceStatus);
-app.delete('/api/v1/announcement/:id', anounceEndpoint.deleteAnouncement);
+app.post('/api/v2/auth/signup', valids.inputsValids(valids.schemas.UserSchema), userEndpoint.userSignUp);
+app.post('/api/v2/auth/signin', userEndpoint.userSignIn);
+app.get('/api/v2/allusers', userEndpoint.getAllUsers);
+app.get('/api/v2/oneuser', userEndpoint.getOneUser);
+app.post('/api/v2/announcement',valids.inputsValids(valids.schemas.AnouncementSchema), anounceEndpoint.createAnounment);
+app.put('/api/v2/anouncement/:id', anounceEndpoint.updateAnouncement);
+app.get('/api/v2/announcements', anounceEndpoint.getAllAnouncement);
+app.get('/api/v2/announcement/:id', anounceEndpoint.getOneAnouncement);
+app.get('/api/v2/announcement/:status', anounceEndpoint.getAnounceByStatus);
+app.put('/api/v2/announcement/status', valids.inputsValids(valids.schemas.changeAnnouncement), anounceEndpoint.changeAnounceStatus);
+app.delete('/api/v2/announcement/:id', anounceEndpoint.deleteAnouncement);
 
 const port = process.env.PORT || 8080;
 

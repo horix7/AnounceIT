@@ -1,8 +1,9 @@
-import { hashSync } from 'bcryptjs';
+import { hashSync, hash } from 'bcryptjs';
 
-import userData, { allUsers } from './userData';
+import userData from './userData';
 
 import tokens from '../helpers/userTokens';
+import checkToken from '../middleware/userAuthatication';
 
 class User {
     constructor() {
@@ -18,28 +19,26 @@ class User {
            }
         };
         this.createUser = (newUser) => {
-            const usedEmail = userData.allUsers.find(userEmail => userEmail.email === newUser.email);
-            const checked = usedEmail !== 'undefined'
-            if (checked) {
-                const inputData = {
+            let inputData;
+            let ecnrypted = hashSync(newUser.password, 10)
+            if (!userData.allUsers.find(userEmail => newUser.email === userEmail.email)) {
+                inputData = {
                     "id": userData.allUsers.length + 1,
-                    "token": tokens.encode(newUser.email),
+                    "token": tokens.encode({email:newUser.email, is_admin: false}),
                     "email": newUser.email,
                     "first_name": newUser.firstName,
                     "last_name": newUser.lastName,
                     "address": newUser.address,
                     "phoneNumber": newUser.phoneNumber,
-                    "password": newUser.password,
-                    "is_admin": newUser.is_admin
-                };
-                userData.allUsers.push(inputData); 
-
+                    "password": ecnrypted,
+                    "is_admin": false
+                }
+                userData.token = tokens.encode({email:newUser.email, is_admin: false})
+                userData.allUsers.push(inputData)
                 return inputData
-               
             }
             else {
-                let res = 'invalid';
-                return res;
+                return 'invalid';
             }
         };
 

@@ -1,18 +1,14 @@
+import userData from '../models/userData';
 
-import account from '../models/userCreate'
+import account from '../models/userCreate';
+
 
 const userInfo = {
     userSignUp(req, res) {
-        if ( account == 'undefined') {
+        if (account.createUser(req.body) == 'invalid') {
             return res.status(403).json({
                 "status":"error",
-                "error":"undefined account"
-            });
-        }
-        else if (account.createUser(req.body) == 'invalid') {
-            return res.status(403).json({
-                "status":"error",
-                "error":"you provided invalid information"
+                "error":"youremail provide is already in use "
             });
         }
         else if (req.body == {}) {
@@ -22,9 +18,10 @@ const userInfo = {
             }); 
           
         } else { 
+            let newUSerInfo = account.createUser(req.body)
             return res.status(201).json({
                 "status":"success",
-                "data": account.createUser(req.body)
+                "data": userData.allUsers[userData.allUsers.length - 1]
                });
         }
     },

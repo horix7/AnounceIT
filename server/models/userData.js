@@ -1,3 +1,3 @@
 const allUsers = [];
-
-export default {allUsers}
+let token;
+export default {allUsers, token}
