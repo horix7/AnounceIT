@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha --require @babel/register ./server/tests/*.js --exit ",
-    "start": "babel-node ./server/index.js",
-    "build": "babel server --out-dir  dist ",
+    "start": "nodemon --exec babel-node ./server/index.js",
+    "build": "babel server --out-dir  dist",
     "serve": "node dict dist/index.js"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0",
     "node-gyp": "^6.1.0",
     "nodemon": "^2.0.2",
     "passport": "^0.4.1",

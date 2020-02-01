@@ -1,12 +1,14 @@
+import userToken from './userData';
 import anouncementData from './anouncementData';
-
+import decode from 'jwt-decode';
 class AnouncementInfo {
     constructor() {
         this.createAnounce = (anounce) => {
+            const tokenn = decode(userToken.token)
             const anounceData = {
-                id: anounce.id,
-                owner: anounce.id,
-                status: anounce.status || "pending",
+                id: anouncementData.length + 1,
+                owner: tokenn.email,
+                status: "pending",
                 text: anounce.text,
                 start_date: anounce.starts,
                 end_date: anounce.ends
@@ -20,9 +22,6 @@ class AnouncementInfo {
             anouncementData.forEach(anounce => {
                 if (anounce.id == anounceChange) {
                     newAnounce = {
-                        id: changes.id,
-                        owner: changes.id,
-                        status: changes.status,
                         text: changes.text,
                         start_date: changes.starts,
                         end_date: changes.ends

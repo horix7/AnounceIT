@@ -1,5 +1,6 @@
 
 import account from '../models/userCreate'
+import userData, { allUsers } from './userData';
 
 const userInfo = {
     userSignUp(req, res) {
@@ -9,7 +10,7 @@ const userInfo = {
                 "error":"undefined account"
             });
         }
-        else if (account.createUser(req.body) == 'invalid') {
+        else if (account.createUser(req.body) === 'invalid') {
             return res.status(403).json({
                 "status":"error",
                 "error":"you provided invalid information"
@@ -22,9 +23,10 @@ const userInfo = {
             }); 
           
         } else { 
+            let newUSerInfo = account.createUser(req.body)
             return res.status(201).json({
                 "status":"success",
-                "data": account.createUser(req.body)
+                "data": userData.allUsers[userData.allUsers.length]
                });
         }
     },
