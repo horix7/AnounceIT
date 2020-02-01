@@ -8,14 +8,13 @@ import app from '../index';
 chai.should();
 chai.use(chaiHttp)
 
-const userTest = {
-	"firstName": "userfirs",
-	"lastName": "lastName",
-	"email": "email@mail.com",
-	"address": "addressser",
-	"phoneNumber": "string",
-	"is_admin": false,
-	"password": "newassword"
+const userTest ={
+	"firstName": "user first name",
+	"lastName": "last name ",
+	"email": "en1aaaanil@drasenmbss.com",
+	"address": "true",
+	"phoneNumber": "123212",
+	"password": "newasssword"
 }
 
 const oneUser = {

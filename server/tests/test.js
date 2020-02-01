@@ -11,10 +11,6 @@ should();
 use(chaiHttp);
 
 const announcementTestOne = {
-	"id":12,
-	"status": "pending",
-	"starts": "2000-12-20",
-	"ends": "20012-21-43",
 	"text": "addressser"
 }
 
@@ -29,7 +25,7 @@ const changeAnounce = {
           .post('/api/v1/announcement')
           .send(announcementTestOne)
           .end((err, res) => {
-            res.status.should.be.equal(201);
+            res.status.should.be.equal(401);
           });
       });
 
@@ -38,7 +34,7 @@ const changeAnounce = {
           .put('/api/v1/anouncement/1')
           .send()
           .end((err, res) => {
-            res.status.should.be.equal(403);
+            res.status.should.be.equal(401);
           });
       });
 
@@ -47,8 +43,8 @@ const changeAnounce = {
           .get('/api/v1/announcements')
           .send()
           .end((err, res) => {
-            res.body.status.should.be.equal('success');
-            res.status.should.be.equal(200);
+            res.body.status.should.be.equal('error');
+            res.status.should.be.equal(401);
           });
       });
 
